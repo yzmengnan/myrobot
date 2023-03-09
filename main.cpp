@@ -20,7 +20,7 @@
 #include "ReadTXT.hpp"
 #include "Servo_Driver.h"
 #include "TimerCounter.h"
-#include "variable.h"
+//#include "variable.h"
 // DIO headers
 
 // Gloabl varible
@@ -38,9 +38,9 @@ auto main() -> int
     sd myservo(myads);
     Mysocket server;
     server.build_socket();
-    std::vector<DTS> sdata(2);
-    std::vector<DFS> gdata(2);
-    std::vector<float> Joint(2);
+    std::vector<DTS> sdata(Servo_number);
+    std::vector<DFS> gdata(Servo_number);
+    std::vector<float> Joint(Servo_number);
 
 //    s_err = myservo.Servo_On(sdata, gdata);
 

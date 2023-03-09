@@ -20,7 +20,7 @@
 #include "TcAdsAPI.h"
 //
 
-#include "variable.h"
+//#include "variable.h"
 #include <atomic>
 #include <iostream>
 #include <vector>

@@ -15,7 +15,6 @@
 #define INPUT_BASE 0xf020
 #define INPUT_OFFSET 0x1f400
 
-#define DTS_SIZE 20
-#define DFS_SIZE 12
+
 
 #endif
