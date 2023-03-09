@@ -113,7 +113,7 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/test
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Demo0
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/ld.exe
@@ -247,24 +247,6 @@ Demo0_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Demo0_SOURCE_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0
-
-//Value Computed by CMake
-Demo_BINARY_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug
-
-//Value Computed by CMake
-Demo_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Demo_SOURCE_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0
-
-//Value Computed by CMake
-test_BINARY_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug
-
-//Value Computed by CMake
-test_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-test_SOURCE_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0
 
 
 ########################

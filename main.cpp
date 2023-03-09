@@ -12,11 +12,9 @@
 #include <mutex>
 #include <thread>
 #include <vector>
-#include <winsock2.h>
 // MYdemo headers
-#include "ADS.h"
-#include "Data_Process.h"
 #include "Mysocket.h"
+#include "ADS.h"
 #include "ReadTXT.hpp"
 #include "Servo_Driver.h"
 #include "TimerCounter.h"
