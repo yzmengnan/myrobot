@@ -107,12 +107,9 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             recvdata.Cartesian_Position = (float *) &recvbuf.front() + recvdata.Cartesian_Position_location;
             recvdata.Cartesian_Velocity_set = (float *) &recvbuf.front() + recvdata.Cartesian_Velocity_set_location;
             recvdata.Tail_check = (int *) &recvbuf.front() + recvdata.Tail_check_location;
-
             th_mutex.lock();
-//            std::vector<float> jointdata ={recvdata.Joint_Position_set[0],recvdata.Joint_Position_set[1]};
             std::vector<float> jointdata(recvdata.Joint_Position_set,recvdata.Joint_Position_set+Servo_number);
             dp::j2s(jointdata,sdata);
-            std::cout<<sdata[0].Target_Pos<<std::endl;
             th_mutex.unlock();
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0]
@@ -120,10 +117,11 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
                       << recvdata.Joint_Position_set[1] << std::endl;
         }
     }
-    iResult = -1;
+    std::cout<<"Socket Communication Error:"<<iResult<<std::endl;
+    s_err=iResult;
 }
 
-void Mysocket::mysocket_send() {
+void Mysocket::mysocket_send(ads myads) {
     std::vector<DFS> gdata(2);
     std::vector<float> temp;
     std::vector<uint8_t *> senddata(gdata.size());

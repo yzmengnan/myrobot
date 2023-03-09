@@ -33,7 +33,7 @@
 
 extern std::mutex th_mutex;
 extern ads myads;
-
+extern std::atomic_int s_err;
 class Mysocket {
 public:
     Recv recvdata;
@@ -45,7 +45,7 @@ public:
 
     auto build_socket() -> int;
 
-    void mysocket_send();
+    void mysocket_send(ads myads);
 
     void mysocket_recv(std::vector<DTS> &sdata);
 

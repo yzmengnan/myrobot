@@ -16,7 +16,7 @@ void mt::tc(int *const flag, int breakout_value) {
     *flag = 0;
 }
 
-void mt::status_print(bool *flag, const int cycletime) {
+void mt::status_print(bool *flag, const int cycletime,ads myads) {
     std::vector<DFS> gdata(2);
     while (s_err >= 0 && flag) {
         std::this_thread::sleep_for(std::chrono::milliseconds(cycletime));
@@ -36,3 +36,17 @@ void mt::status_print(bool *flag, const int cycletime) {
         // std::cout << "status_print,ok!" << std::endl;
     }
 }
+
+void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, sd mysd) {
+    int error_code=0;
+    while(true){
+        if(runflag==1){
+            error_code=mysd.Servo_PTP_Basic_isSync(sdata,gdata,CIOFF,100);
+//            std::cout<<error_code<<std::endl;
+            std::cout<<"DRIVE MODE:"<<runflag<<std::endl;
+            std::cout<<"Target_position:"<<sdata[0].Target_Pos<<","<<sdata[1].Target_Pos<<std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+    }
+}
+

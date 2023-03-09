@@ -31,7 +31,7 @@ auto ads::set(std::vector<DTS> &sdata) -> int {
 
     nErr = AdsSyncWriteReq(pAddr, OUTPUT_BASE, OUTPUT_OFFSET, DTS_SIZE * sdata.size(), sdata.data());
     if (nErr) {
-        std::cout << "Error: Ads send data :" << nErr << std::endl;
+//        std::cout << "Error: Ads send data :" << nErr << std::endl;
         return -101;
     }
     return 0;
@@ -45,7 +45,7 @@ auto ads::get(std::vector<DFS> &gdata) -> int {
 
     nErr = AdsSyncReadReq(pAddr, INPUT_BASE, INPUT_OFFSET, DFS_SIZE * gdata.size(), gdata.data());
     if (nErr) {
-        std::cout << "Error: Ads get data :" << nErr << std::endl;
+//        std::cout << "Error: Ads get data :" << nErr << std::endl;
         return -102;
     }
     return 0;
