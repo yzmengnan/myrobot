@@ -35,6 +35,8 @@ extern ads myads;
 
 class Mysocket {
 public:
+    Recv recvdata;
+    Ssend ssenddata;
     Mysocket() = default;
     int iResult = 1;
     auto build_socket() -> int;

@@ -15,7 +15,7 @@
 #include "ADS.h"
 #include "Data_Define.h"
 #include "Data_Process.h"
-#include "variable.h"
+//#include "variable.h"
 #include <chrono>
 #include <iostream>
 #include <mutex>
@@ -23,6 +23,7 @@
 #include <vector>
 
 extern std::mutex th_mutex;
+extern std::atomic_int s_err;
 extern ads myads;
 using mt = class myThreadfuc {
 public:
