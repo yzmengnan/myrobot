@@ -56,8 +56,8 @@ auto main() -> int {
 
     std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), myservo);
     drive.detach();
-    std::thread socket_send(&Mysocket::mysocket_send, &server, myads);
-    socket_send.detach();
+//    std::thread socket_send(&Mysocket::mysocket_send, &server, myads);
+//    socket_send.detach();
     /*
     while (true) {
         // 调用关节角

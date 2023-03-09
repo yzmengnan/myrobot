@@ -121,7 +121,6 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
             }
         }
     }
-
     if (!servo_state) {
         std::cout << "Servo Operation Mode Change Failure!" << std::endl;
         error_code = -3000;
