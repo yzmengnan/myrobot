@@ -20,7 +20,6 @@
 #include "ReadTXT.hpp"
 #include "Servo_Driver.h"
 #include "TimerCounter.h"
-//#include "variable.h"
 // DIO headers
 
 // Gloabl varible
