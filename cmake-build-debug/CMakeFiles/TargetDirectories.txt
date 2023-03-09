@@ -1,0 +1,9 @@
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/Demo0.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/adslib.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/dplib.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/mysocketlib.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/myThreadlib.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/sdlib.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/tclib.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug/CMakeFiles/rebuild_cache.dir

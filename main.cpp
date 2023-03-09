@@ -1,0 +1,80 @@
+/*
+ * @Author: YangQ
+ * @Date: 2023-02-27 10:32:44
+ * @LastEditors: YangQ
+ * @LastEditTime: 2023-03-08 21:30:52
+ * @FilePath: \Demo0\main.cpp
+ * @Description:
+ *
+ * Copyright (c) 2023 by YangQ, All Rights Reserved.
+ */
+#include <iostream>
+#include <mutex>
+#include <thread>
+#include <vector>
+#include <winsock2.h>
+// MYdemo headers
+#include "ADS.h"
+#include "Data_Process.h"
+#include "Mysocket.h"
+#include "ReadTXT.hpp"
+#include "Servo_Driver.h"
+#include "TimerCounter.h"
+#include "variable.h"
+// DIO headers
+
+// Gloabl varible
+std::atomic_int s_err(0);
+std::mutex th_mutex;
+ads myads;
+auto main() -> int
+{
+    ReadTxT txt;
+    std::vector<std::vector<std::string>> local_data, ans;
+    string path = R"(C:\Users\LR\OneDrive\Demo0\Data\test_data.txt)";
+    local_data = txt.read_from_file(ans, path);
+    // std::cout << stof(local_data[2][1]);
+    //
+    TimerCounter mytc;
+    mytc.Start();
+    Sleep(1000);
+    mytc.Stop();
+    std::cout << mytc.dbTime * 1000;
+    sd myservo(myads);
+    Mysocket server;
+    server.build_socket();
+    std::vector<DTS> sdata(2);
+    std::vector<DFS> gdata(2);
+    std::vector<float> Joint(2);
+
+    s_err = myservo.Servo_On(sdata, gdata);
+
+    bool* s_t_flag = new bool(true);
+    // std::thread s_t(mt::status_print, s_t_flag, 10);
+    // s_t.detach();
+
+    std::thread socket_get(&Mysocket::mysocket_recv, &server, std::ref(sdata));
+    socket_get.detach();
+
+    std::thread socket_send(&Mysocket::mysocket_send, &server);
+    socket_send.detach();
+
+    while (true) {
+        // 调用关节角
+        Joint = dp::starget_2j(sdata);
+        s_err = myservo.Servo_PTP_Joint_isSync(Joint, sdata, gdata, 100);
+        // 或者
+        //  s_err = myservo.Servo_PTP_Basic_isSync(sdata, gdata, CIOFF, 100);
+        if (s_err < 0) {
+            std::cout << "System Error! Check Error Code: " << s_err << std::endl;
+            break;
+        }
+        s_err = server.iResult;
+        if (s_err <= 0) {
+            std::cout << "System Error! Check Error Code: " << s_err << std::endl;
+            break;
+        }
+    }
+    s_err = myservo.Servo_Off(sdata, gdata);
+    return 0;
+}
