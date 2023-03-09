@@ -108,9 +108,12 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             recvdata.Cartesian_Velocity_set = (float *) &recvbuf.front() + recvdata.Cartesian_Velocity_set_location;
             recvdata.Tail_check = (int *) &recvbuf.front() + recvdata.Tail_check_location;
             th_mutex.lock();
-            std::vector<float> jointdata(recvdata.Joint_Position_set,recvdata.Joint_Position_set+Servo_number);
-            dp::j2s(jointdata,sdata);
+            std::vector<float> jointdata(recvdata.Joint_Position_set, recvdata.Joint_Position_set + Servo_number);
+            dp::j2s(jointdata, sdata);
             th_mutex.unlock();
+            if (*recvdata.Command == 45) {
+                run_flag = 1;
+            }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0]
                       << ",Joint_Position_set:" << recvdata.Joint_Position_set[0] << ","

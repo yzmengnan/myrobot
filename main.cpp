@@ -23,7 +23,7 @@
 // Gloabl varible
 std::atomic_int s_err(1);
 
-std::atomic_int run_flag(1);//0,默认，1：PP控制启动，2：PP连续运动，3：CSP运动
+std::atomic_int run_flag(0);//0,默认，1：PP控制启动，2：PP连续运动，3：CSP运动
 
 std::mutex th_mutex;
 
@@ -56,8 +56,8 @@ auto main() -> int {
 
     std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), myservo);
     drive.detach();
-//    std::thread socket_send(&Mysocket::mysocket_send, &server);
-//    socket_send.detach();
+    std::thread socket_send(&Mysocket::mysocket_send, &server, myads);
+    socket_send.detach();
     /*
     while (true) {
         // 调用关节角
@@ -77,10 +77,10 @@ auto main() -> int {
     }
     s_err = myservo.Servo_Off(sdata, gdata);
      */
-    while (1) {
-        if(s_err<=0){
-            std::cout<<"System Error:"<<s_err<<std::endl;
-            run_flag=0;
+    while (TRUE) {
+        if (s_err <= 0) {
+            std::cout << "System Error:" << s_err << std::endl;
+            run_flag = 0;
             break;
         }
     }

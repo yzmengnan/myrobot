@@ -35,6 +35,8 @@
 extern std::mutex th_mutex;
 extern ads myads;
 extern std::atomic_int s_err;
+extern std::atomic_int run_flag;
+
 class Mysocket {
 public:
     Recv recvdata;
