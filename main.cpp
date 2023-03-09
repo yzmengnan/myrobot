@@ -29,10 +29,10 @@ std::mutex th_mutex;
 ads myads;
 auto main() -> int
 {
-    ReadTxT txt;
-    std::vector<std::vector<std::string>> local_data, ans;
-    string path = R"(C:\Users\LR\OneDrive\Demo0\Data\test_data.txt)";
-    local_data = txt.read_from_file(ans, path);
+//    ReadTxT txt;
+//    std::vector<std::vector<std::string>> local_data, ans;
+//    string path = R"(C:\Users\LR\OneDrive\Demo0\Data\test_data.txt)";
+//    local_data = txt.read_from_file(ans, path);
     // std::cout << stof(local_data[2][1]);
     //
     TimerCounter mytc;
