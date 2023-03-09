@@ -114,6 +114,7 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
                 child_servo.Target_Pos = dp::t2p(recvdata.Joint_Position_set[iter]);
                 iter++;
             }
+            th_mutex.unlock();
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0]
                       << ",Joint_Position_set:" << recvdata.Joint_Position_set[0] << ","
