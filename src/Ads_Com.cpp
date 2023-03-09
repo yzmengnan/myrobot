@@ -14,8 +14,7 @@
  * @description: 构造函数，生成pAddr用于通讯地址确认
  * @return {*}
  */
-ADS_COMMUNICATION::ADS_COMMUNICATION()
-{
+ADS_COMMUNICATION::ADS_COMMUNICATION() {
     nPort = AdsPortOpen();
     nErr = AdsGetLocalAddress(pAddr);
     if (nErr) {
@@ -28,8 +27,7 @@ ADS_COMMUNICATION::ADS_COMMUNICATION()
  * @description: 发送数据
  * @return {*}
  */
-auto ads::set(std::vector<DTS>& sdata) -> int
-{
+auto ads::set(std::vector<DTS> &sdata) -> int {
 
     nErr = AdsSyncWriteReq(pAddr, OUTPUT_BASE, OUTPUT_OFFSET, DTS_SIZE * sdata.size(), sdata.data());
     if (nErr) {
@@ -43,8 +41,7 @@ auto ads::set(std::vector<DTS>& sdata) -> int
  * @description: 接受数据
  * @return {*}
  */
-auto ads::get(std::vector<DFS>& gdata) -> int
-{
+auto ads::get(std::vector<DFS> &gdata) -> int {
 
     nErr = AdsSyncReadReq(pAddr, INPUT_BASE, INPUT_OFFSET, DFS_SIZE * gdata.size(), gdata.data());
     if (nErr) {
@@ -58,14 +55,13 @@ auto ads::get(std::vector<DFS>& gdata) -> int
  * @description: ads版本确认
  * @return {*}
  */
-auto ads::check_version() -> int
-{
+auto ads::check_version() -> int {
     long nTemp;
-    AdsVersion* pDLLVersion;
+    AdsVersion *pDLLVersion;
     nTemp = AdsGetDllVersion();
-    pDLLVersion = (AdsVersion*)&nTemp;
-    std::cout << "Version: " << (int)pDLLVersion->version << '\n';
-    std::cout << "Revision: " << (int)pDLLVersion->revision << '\n';
+    pDLLVersion = (AdsVersion *) &nTemp;
+    std::cout << "Version: " << (int) pDLLVersion->version << '\n';
+    std::cout << "Revision: " << (int) pDLLVersion->revision << '\n';
     std::cout << "Build: " << pDLLVersion->build << '\n';
     std::cout.flush();
     return 0;

@@ -46,9 +46,9 @@ using Recv = struct Recv_from_Client {
     const int Head_check_location = 0;
     const int Command_location = 1;
     const int Joint_Position_set_location = 2;
-    const int Cartesian_Position_location = 2+Servo_number;
-    const int Joint_Velocity_set_location = 2+ Servo_number+6;
-    const int Cartesian_Velocity_set_location = 2+Servo_number + 6 +Servo_number;
+    const int Cartesian_Position_location = 2 + Servo_number;
+    const int Joint_Velocity_set_location = 2 + Servo_number + 6;
+    const int Cartesian_Velocity_set_location = 2 + Servo_number + 6 + Servo_number;
     const int Tail_check_location = Cartesian_Velocity_set_location + 6;
     const int total_recv_size = Tail_check_location + 1;
 };
@@ -65,9 +65,9 @@ using Ssend = struct Send_to_Client {
     const int Head_check_location = 0;
     const int Status_location = 1;
     const int Joint_Position_location = 2;
-    const int Cartesian_Position_location = 2+Servo_number;
-    const int Joint_Velocity_real_location = 2+ Servo_number+6;
-    const int Cartesian_Velocity_real_location = 2+Servo_number + 6 +Servo_number;
+    const int Cartesian_Position_location = 2 + Servo_number;
+    const int Joint_Velocity_real_location = 2 + Servo_number + 6;
+    const int Cartesian_Velocity_real_location = 2 + Servo_number + 6 + Servo_number;
     const int Tail_check_location = Cartesian_Velocity_real_location + 6;
     const int total_recv_size = Tail_check_location + 1;
 };

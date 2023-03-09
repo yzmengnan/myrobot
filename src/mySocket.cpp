@@ -96,8 +96,8 @@ void Mysocket::mysocket_recv(std::vector<DTS> &sdata) {
 }
 
 void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
+    std::array<char, DEFAULT_BUFLEN> recvbuf;
     while (iResult > 0) {
-        std::array<char, DEFAULT_BUFLEN> recvbuf;
         iResult = recv(mysocket, &recvbuf.front(), DEFAULT_BUFLEN, 0);
         if (iResult > 0) {
             recvdata.Head_check = (int *) &recvbuf.front() + recvdata.Head_check_location;
@@ -108,12 +108,11 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             recvdata.Cartesian_Velocity_set = (float *) &recvbuf.front() + recvdata.Cartesian_Velocity_set_location;
             recvdata.Tail_check = (int *) &recvbuf.front() + recvdata.Tail_check_location;
 
-            int iter = 0;
             th_mutex.lock();
-            for (auto &child_servo: sdata) {
-                child_servo.Target_Pos = dp::t2p(recvdata.Joint_Position_set[iter]);
-                iter++;
-            }
+//            std::vector<float> jointdata ={recvdata.Joint_Position_set[0],recvdata.Joint_Position_set[1]};
+            std::vector<float> jointdata(recvdata.Joint_Position_set,recvdata.Joint_Position_set+Servo_number);
+            dp::j2s(jointdata,sdata);
+            std::cout<<sdata[0].Target_Pos<<std::endl;
             th_mutex.unlock();
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0]

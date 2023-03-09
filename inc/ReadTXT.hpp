@@ -9,16 +9,17 @@
  * Copyright (c) 2023 by YangQ, All Rights Reserved.
  */
 #pragma once
+
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
 
 using namespace std;
+
 class ReadTxT {
 public:
-    auto read_from_file(vector<vector<string>>& ans, string& filename) -> vector<vector<string>>&
-    {
+    auto read_from_file(vector<vector<string>> &ans, string &filename) -> vector<vector<string>> & {
         ifstream infile(filename);
         if (!infile) {
             cout << "Wrong with opening file!" << endl;
@@ -30,14 +31,14 @@ public:
             lines.push_back(thelines);
         }
         infile.close();
-        for (auto& line : lines) {
-            for (char& chardata : line) {
+        for (auto &line: lines) {
+            for (char &chardata: line) {
                 if (chardata == ',') {
                     chardata = ' ';
                 }
             }
         }
-        for (auto& theline : lines) {
+        for (auto &theline: lines) {
             vector<string> res;
             istringstream line(theline);
             string word;

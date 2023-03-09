@@ -10,14 +10,13 @@
  */
 #include "myThreadfuc.h"
 
-void mt::tc(int* const flag, int breakout_value)
-{
+void mt::tc(int *const flag, int breakout_value) {
     // std::cout << "Timer counting" << std::endl;
-    std::this_thread ::sleep_for(std::chrono::milliseconds(breakout_value));
+    std::this_thread::sleep_for(std::chrono::milliseconds(breakout_value));
     *flag = 0;
 }
-void mt::status_print(bool* flag, const int cycletime)
-{
+
+void mt::status_print(bool *flag, const int cycletime) {
     std::vector<DFS> gdata(2);
     while (s_err >= 0 && flag) {
         std::this_thread::sleep_for(std::chrono::milliseconds(cycletime));
@@ -29,7 +28,7 @@ void mt::status_print(bool* flag, const int cycletime)
         }
         // th_mutex.unlock();
         int joint_number = 0;
-        for (DFS child_servo : gdata) {
+        for (DFS child_servo: gdata) {
             std::cout << "Joint" << joint_number << " " << dp::p2t(child_servo.Actual_Pos) << ",  ";
             joint_number++;
         }

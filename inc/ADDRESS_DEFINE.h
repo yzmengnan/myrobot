@@ -16,5 +16,4 @@
 #define INPUT_OFFSET 0x1f400
 
 
-
 #endif

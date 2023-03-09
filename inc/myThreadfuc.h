@@ -27,8 +27,9 @@ extern std::atomic_int s_err;
 extern ads myads;
 using mt = class myThreadfuc {
 public:
-    static void tc(int* const flag, int breakout_value);
-    static void status_print(bool* flag, const int cycletime);
+    static void tc(int *const flag, int breakout_value);
+
+    static void status_print(bool *flag, const int cycletime);
 };
 
 #endif

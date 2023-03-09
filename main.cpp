@@ -27,8 +27,8 @@
 std::atomic_int s_err(0);
 std::mutex th_mutex;
 ads myads;
-auto main() -> int
-{
+
+auto main() -> int {
 //    ReadTxT txt;
 //    std::vector<std::vector<std::string>> local_data, ans;
 //    string path = R"(C:\Users\LR\OneDrive\Demo0\Data\test_data.txt)";
@@ -44,7 +44,7 @@ auto main() -> int
 
 //    s_err = myservo.Servo_On(sdata, gdata);
 
-    bool* s_t_flag = new bool(true);
+    bool *s_t_flag = new bool(true);
     // std::thread s_t(mt::status_print, s_t_flag, 10);
     // s_t.detach();
 
@@ -72,7 +72,7 @@ auto main() -> int
     }
     s_err = myservo.Servo_Off(sdata, gdata);
      */
-    while(1){
+    while (1) {
 
     }
     return 0;

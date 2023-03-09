@@ -12,19 +12,19 @@
 #include "TimerCounter.h"
 
 using namespace std;
-TimerCounter::TimerCounter()
-{
+
+TimerCounter::TimerCounter() {
     QueryPerformanceFrequency(&freq); // 锟斤拷取锟斤拷锟斤拷CPU时锟斤拷频锟斤拷
 }
+
 // TimerCounter::~TimerCounter()
 //     = default;
-void TimerCounter::Start()
-{
+void TimerCounter::Start() {
     QueryPerformanceCounter(&startCount); // 锟斤拷始锟斤拷时
 }
-void TimerCounter::Stop()
-{
+
+void TimerCounter::Stop() {
     QueryPerformanceCounter(&endCount); // 停止锟斤拷时
 
-    dbTime = ((double)endCount.QuadPart - (double)startCount.QuadPart) / (double)freq.QuadPart; // 锟斤拷取时锟斤拷锟�
+    dbTime = ((double) endCount.QuadPart - (double) startCount.QuadPart) / (double) freq.QuadPart; // 锟斤拷取时锟斤拷锟�
 }

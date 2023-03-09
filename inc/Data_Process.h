@@ -9,6 +9,7 @@
  * Copyright (c) 2023 by YangQ, All Rights Reserved.
  */
 #pragma once
+
 #include "Data_Define.h"
 #include <iostream>
 #include <vector>
@@ -38,7 +39,7 @@ public:
      * @param {vector<float>} Joint_theta
      * @return {*}
      */
-    static auto j2s(std::vector<float> Joint_theta, std::vector<DTS>& sdata) -> int;
+    static auto j2s(std::vector<float> Joint_theta, std::vector<DTS> &sdata) -> int;
 
     /**
      * @description: 从当前数据获取关节角,获取关节角操作不对数据做处理

@@ -33,8 +33,10 @@ class ADS_COMMUNICATION {
 public:
     ADS_COMMUNICATION();
 
-    auto set(std::vector<DTS>& sdata) -> int;
-    auto get(std::vector<DFS>& gdata) -> int;
+    auto set(std::vector<DTS> &sdata) -> int;
+
+    auto get(std::vector<DFS> &gdata) -> int;
+
     static auto check_version() -> int;
 
 private:
@@ -42,6 +44,7 @@ private:
     AmsAddr Addr;
     PAmsAddr pAddr = &Addr;
 };
+
 using ads = ADS_COMMUNICATION;
 
 #endif

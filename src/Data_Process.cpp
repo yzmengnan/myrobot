@@ -11,16 +11,15 @@
 
 #include "Data_Process.h"
 
-auto dp::p2t(INT32 pulse) -> float
-{
+auto dp::p2t(INT32 pulse) -> float {
     return float(double(pulse) / R_pulse_of_encoder / R_reductor * 360);
 }
-auto dp::t2p(double revolution) -> INT32
-{
-    return (INT32)(revolution / 360 * R_reductor * R_pulse_of_encoder);
+
+auto dp::t2p(double revolution) -> INT32 {
+    return (INT32) (revolution / 360 * R_reductor * R_pulse_of_encoder);
 }
-auto dp::j2s(std::vector<float> Joint_theta, std::vector<DTS>& sdata) -> int
-{
+
+auto dp::j2s(std::vector<float> Joint_theta, std::vector<DTS> &sdata) -> int {
     if (sdata.size() != Joint_theta.size())
         return -2001;
     else {
@@ -30,23 +29,22 @@ auto dp::j2s(std::vector<float> Joint_theta, std::vector<DTS>& sdata) -> int
         return 0;
     }
 }
-auto dp::sreal_2j(std::vector<DFS> gdata) -> std::vector<float>
-{
+
+auto dp::sreal_2j(std::vector<DFS> gdata) -> std::vector<float> {
     std::vector<DFS> temp = std::move(gdata);
     std::vector<float> Joint_theta;
     Joint_theta.reserve(temp.size());
-    for (DFS child_servo : temp) {
+    for (DFS child_servo: temp) {
         Joint_theta.push_back(p2t(child_servo.Actual_Pos));
     }
     return Joint_theta;
 }
 
-auto dp::starget_2j(std::vector<DTS> sdata) -> std::vector<float>
-{
+auto dp::starget_2j(std::vector<DTS> sdata) -> std::vector<float> {
     std::vector<DTS> temp = std::move(sdata);
     std::vector<float> Joint_theta;
     Joint_theta.reserve(temp.size());
-    for (DTS child_servo : temp) {
+    for (DTS child_servo: temp) {
         Joint_theta.push_back(p2t(child_servo.Target_Pos));
     }
     return Joint_theta;

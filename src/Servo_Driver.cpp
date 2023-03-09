@@ -10,12 +10,11 @@
  */
 #include "Servo_Driver.h"
 
-Servo_Drive::Servo_Drive(ads& myads)
-{
+Servo_Drive::Servo_Drive(ads &myads) {
     pmyads = &myads;
 }
-auto Servo_Drive::Servo_On(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> int
-{
+
+auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> int {
     int error_code = 0;
     bool state = true;
     for (int trial_time = 0; trial_time < 3; trial_time++) {
@@ -23,14 +22,14 @@ auto Servo_Drive::Servo_On(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> 
         if (error_code < 0)
             return error_code;
 
-        for (DFS child_servo : gdata) {
+        for (DFS child_servo: gdata) {
             state = ((child_servo.Status_Word &= 0x40) == 0x40); // 状态字按位与0x40后等于0x40 表示，此时伺服处于初始化完成状态
         }
         if (state) {
             std::cout << "All Servos Ready!" << std::endl;
         }
 
-        for (DTS& child_servo : sdata) {
+        for (DTS &child_servo: sdata) {
             child_servo.Control_Word = 0x0006;
         }
 
@@ -40,13 +39,13 @@ auto Servo_Drive::Servo_On(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> 
         if (error_code)
             return error_code;
 
-        for (DFS child_servo : gdata) {
+        for (DFS child_servo: gdata) {
             state = ((child_servo.Status_Word &= 0x21) == 0x21);
         }
         if (state) {
             std::cout << "All Servos Ready to switch on!" << std::endl;
         }
-        for (DTS& child_servo : sdata) {
+        for (DTS &child_servo: sdata) {
             child_servo.Control_Word = 0x0007;
         }
         error_code = pmyads->set(sdata);
@@ -54,14 +53,14 @@ auto Servo_Drive::Servo_On(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> 
         error_code = pmyads->get(gdata);
         if (error_code)
             return error_code;
-        for (DFS child_servo : gdata) {
+        for (DFS child_servo: gdata) {
             state = ((child_servo.Status_Word &= 0x23) == 0x23);
         }
         if (state) {
             std::cout << "All Servos Switched on!" << std::endl;
         }
 
-        for (DTS& child_servo : sdata) {
+        for (DTS &child_servo: sdata) {
             child_servo.Control_Word = 0x000F;
         }
         error_code = pmyads->set(sdata);
@@ -69,7 +68,7 @@ auto Servo_Drive::Servo_On(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> 
         error_code = pmyads->get(gdata);
         if (error_code)
             return error_code;
-        for (DFS child_servo : gdata) {
+        for (DFS child_servo: gdata) {
             state = ((child_servo.Status_Word &= 0x37) == 0x37);
         }
         if (state) {
@@ -84,10 +83,10 @@ auto Servo_Drive::Servo_On(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> 
     error_code = -1001;
     return error_code;
 }
-auto Servo_Drive::Servo_Off(std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> int
-{
+
+auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> int {
     int error_code = 0;
-    for (auto& child_servo : sdata) {
+    for (auto &child_servo: sdata) {
         child_servo.Control_Word = 0;
     }
     error_code = pmyads->set(sdata);
@@ -96,17 +95,17 @@ auto Servo_Drive::Servo_Off(std::vector<DTS>& sdata, std::vector<DFS>& gdata) ->
     std::cout << "All Servos Operation disabled!" << std::endl;
     return 0;
 }
-auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS>& sdata, std::vector<DFS>& gdata, std::string&& ciflag) -> int
-{
+
+auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag) -> int {
     int error_code = 0;
     bool servo_state = true;
-    int* const flag = new int(1);
+    int *const flag = new int(1);
     // PTP with CIOFF
     if (ciflag == CIOFF) {
         th_mutex.lock();
         error_code = pmyads->set(sdata); // 更新607Ah（Target Position）的值
         th_mutex.unlock();
-        for (auto& child_servo : sdata)
+        for (auto &child_servo: sdata)
             child_servo.Control_Word |= 0x10;
         // 检查伺服是否收到目标点，否则，循环发送控制字的bit4为1；
         th_mutex.lock();
@@ -124,7 +123,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS>& sdata, std::vector<DFS>& gda
             if (error_code < 0) {
                 return error_code;
             }
-            for (auto child_servo : gdata) {
+            for (auto child_servo: gdata) {
                 if (child_servo.Status_Word & 0x1000)
                     servo_get_number++;
             }
@@ -136,7 +135,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS>& sdata, std::vector<DFS>& gda
         // 如果是伺服均收到新的坐标位置，更新控制字，准备下一次位置更新
         if (!servo_state) {
             delete flag;
-            for (auto& child_servo : sdata) {
+            for (auto &child_servo: sdata) {
                 child_servo.Control_Word &= 0x0f;
             }
             th_mutex.lock();
@@ -144,7 +143,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS>& sdata, std::vector<DFS>& gda
             th_mutex.unlock();
             return error_code;
         }
-        // 否则，则是*flag=0退出 由th1最大延时后，伺服依旧没有响应
+            // 否则，则是*flag=0退出 由th1最大延时后，伺服依旧没有响应
         else {
             std::cout << "Servo lag!" << std::endl;
             delete flag;
@@ -153,7 +152,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS>& sdata, std::vector<DFS>& gda
         }
     }
 
-    // 轨迹点连续，用于连续点动
+        // 轨迹点连续，用于连续点动
     else if (ciflag == CION) {
         std::cout << "ptp_continue" << std::endl;
         return error_code;
@@ -163,11 +162,11 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS>& sdata, std::vector<DFS>& gda
     }
 }
 
-auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DFS>& gdata, std::string&& ciflag, int rpm) -> int
-{
+auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag,
+                                         int rpm) -> int {
     int error_code = 0;
     bool servo_state = true;
-    int* flag = new int(1);
+    int *flag = new int(1);
     error_code = pmyads->get(gdata);
     if (error_code < 0)
         return error_code;
@@ -177,7 +176,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DF
         rate.push_back(dp::p2t(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos)));
     }
     float max_delta_p = *std::max_element(rate.begin(), rate.end());
-    for (auto& child_rate : rate) {
+    for (auto &child_rate: rate) {
         child_rate = child_rate / max_delta_p;
     }
     for (int i = 0; i < sdata.size(); i++) {
@@ -190,7 +189,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DF
     // PTP with CIOFF
     if (ciflag == CIOFF) {
         error_code = pmyads->set(sdata); // 更新607Ah（Target Position）的值
-        for (auto& child_servo : sdata)
+        for (auto &child_servo: sdata)
             child_servo.Control_Word |= 0x10;
         // 检查伺服是否收到目标点，否则，循环发送控制字的bit4为1；
         error_code = pmyads->set(sdata);
@@ -202,7 +201,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DF
             error_code = pmyads->get(gdata);
             if (error_code < 0)
                 return error_code;
-            for (auto child_servo : gdata) {
+            for (auto child_servo: gdata) {
                 if (child_servo.Status_Word & 0x1000)
                     servo_get_number++;
             }
@@ -213,13 +212,13 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DF
         // 如果是伺服均收到新的坐标位置，更新控制字，准备下一次位置更新
         if (!servo_state) {
             delete flag;
-            for (auto& child_servo : sdata) {
+            for (auto &child_servo: sdata) {
                 child_servo.Control_Word &= 0x0f;
             }
             error_code = pmyads->set(sdata);
             return error_code;
         }
-        // 否则，若是*flag=0退出 由th1最大延时后，伺服依旧没有响应
+            // 否则，若是*flag=0退出 由th1最大延时后，伺服依旧没有响应
         else if (!*flag) {
             std::cout << "Servo lag!" << std::endl;
             delete flag;
@@ -228,7 +227,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DF
         return error_code;
     }
 
-    // 轨迹点连续，用于连续点动
+        // 轨迹点连续，用于连续点动
     else if (ciflag == CION) {
         std::cout << "ptp_continue" << std::endl;
         return error_code;
@@ -237,12 +236,13 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS>& sdata, std::vector<DF
         return error_code;
     }
 }
+
 /**
  * @description: 根据Joint_theta直接运动到Position
  * @return {*}
  */
-auto Servo_Drive::Servo_PTP_Joint_noSync(std::vector<float> Joint_theta, std::vector<DTS>& sdata, std::vector<DFS>& gdata) -> int
-{
+auto Servo_Drive::Servo_PTP_Joint_noSync(std::vector<float> Joint_theta, std::vector<DTS> &sdata,
+                                         std::vector<DFS> &gdata) -> int {
     int error_code = 0;
     error_code = dp::j2s(std::move(Joint_theta), sdata);
     if (error_code < 0) {
@@ -252,8 +252,9 @@ auto Servo_Drive::Servo_PTP_Joint_noSync(std::vector<float> Joint_theta, std::ve
     return error_code;
 }
 
-auto Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<DTS>& sdata, std::vector<DFS>& gdata, int rpm) -> int
-{
+auto
+Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<DTS> &sdata, std::vector<DFS> &gdata,
+                                    int rpm) -> int {
     int error_code = 0;
     error_code = dp::j2s(std::move(Joint_theta), sdata);
     if (error_code < 0) {
@@ -272,7 +273,7 @@ auto Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::ve
     // 取出最大的差值
     float max_delta_p = *std::max_element(rate.begin(), rate.end());
     // 以最大的插值为分母，按比例对每个轴的速度均一
-    for (auto& child_rate : rate) {
+    for (auto &child_rate: rate) {
         child_rate = child_rate / max_delta_p;
     }
     for (int i = 0; i < sdata.size(); i++) {
