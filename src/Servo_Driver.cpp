@@ -100,11 +100,42 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
     int error_code = 0;
     bool servo_state = true;
     int *const flag = new int(1);
+
+    if (servo_operation_ready_flag == 0) {
+        //设置PP工作模式
+        for (auto &child_servo: sdata) {
+            child_servo.Mode_of_Operation = 1;
+        }
+        error_code = pmyads->set(sdata);
+        if (error_code < 0) {
+            return error_code;
+        }
+        error_code = pmyads->get(gdata);
+        if (error_code < 0) {
+            return error_code;
+        }
+        //检查伺服是否为PP工作模式
+        for (auto child_servo: gdata) {
+            if (child_servo.Mode_of_Operation_disp != 1) {
+                servo_state = false;
+            }
+        }
+    }
+
+    if (!servo_state) {
+        std::cout << "Servo Operation Mode Change Failure!" << std::endl;
+        error_code = -3000;
+        return error_code;
+    } else
+        servo_operation_ready_flag = 1;
     // PTP with CIOFF
     if (ciflag == CIOFF) {
         th_mutex.lock();
         error_code = pmyads->set(sdata); // 更新607Ah（Target Position）的值
         th_mutex.unlock();
+        if (error_code < 0) {
+            return error_code;
+        }
         for (auto &child_servo: sdata)
             child_servo.Control_Word |= 0x10;
         // 检查伺服是否收到目标点，否则，循环发送控制字的bit4为1；
@@ -112,6 +143,9 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
         error_code = pmyads->set(sdata);
         th_mutex.unlock();
         // 开启线程th1，设置延迟最大20ms即退出
+        if(error_code<0){
+            return error_code;
+        }
         std::thread th1(mt::tc, flag, 20);
         th1.detach();
         while (servo_state && *flag) {
@@ -127,16 +161,15 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
                 if (child_servo.Status_Word & 0x1000)
                     servo_get_number++;
             }
-            if (servo_get_number == gdata.size()) {
+            if (servo_get_number == Servo_number) {
                 servo_state = false;
-            }
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            } else
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
         // 如果是伺服均收到新的坐标位置，更新控制字，准备下一次位置更新
         if (!servo_state) {
-            delete flag;
             for (auto &child_servo: sdata) {
-                child_servo.Control_Word &= 0x0f;
+                child_servo.Control_Word &= 0xff0f;
             }
             th_mutex.lock();
             error_code = pmyads->set(sdata);
@@ -146,7 +179,6 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
             // 否则，则是*flag=0退出 由th1最大延时后，伺服依旧没有响应
         else {
             std::cout << "Servo lag!" << std::endl;
-            delete flag;
             error_code = -3001;
             return error_code;
         }
@@ -185,56 +217,8 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
     error_code = pmyads->set(sdata);
     if (error_code < 0)
         return error_code;
-
-    // PTP with CIOFF
-    if (ciflag == CIOFF) {
-        error_code = pmyads->set(sdata); // 更新607Ah（Target Position）的值
-        for (auto &child_servo: sdata)
-            child_servo.Control_Word |= 0x10;
-        // 检查伺服是否收到目标点，否则，循环发送控制字的bit4为1；
-        error_code = pmyads->set(sdata);
-        // 开启线程th1，设置延迟最大20ms即退出
-        // std::thread th1(mt::tc, flag, 20);
-        // th1.detach();
-        while (servo_state && *flag) {
-            int servo_get_number = 0;
-            error_code = pmyads->get(gdata);
-            if (error_code < 0)
-                return error_code;
-            for (auto child_servo: gdata) {
-                if (child_servo.Status_Word & 0x1000)
-                    servo_get_number++;
-            }
-            if (servo_get_number == gdata.size()) {
-                servo_state = false;
-            }
-        }
-        // 如果是伺服均收到新的坐标位置，更新控制字，准备下一次位置更新
-        if (!servo_state) {
-            delete flag;
-            for (auto &child_servo: sdata) {
-                child_servo.Control_Word &= 0x0f;
-            }
-            error_code = pmyads->set(sdata);
-            return error_code;
-        }
-            // 否则，若是*flag=0退出 由th1最大延时后，伺服依旧没有响应
-        else if (!*flag) {
-            std::cout << "Servo lag!" << std::endl;
-            delete flag;
-            error_code = -3001;
-        }
-        return error_code;
-    }
-
-        // 轨迹点连续，用于连续点动
-    else if (ciflag == CION) {
-        std::cout << "ptp_continue" << std::endl;
-        return error_code;
-    } else {
-        error_code = -3002;
-        return error_code;
-    }
+    error_code = Servo_PTP_Basic(sdata,gdata,CIOFF);
+    return error_code;
 }
 
 /**

@@ -57,6 +57,7 @@ public:
                                 int maxrpm) -> int;
 
 private:
+    int servo_operation_ready_flag=0; //=1表示pp就位，=0表示未就位，=2表示csp就位
     ads *pmyads = nullptr;
 };
 
