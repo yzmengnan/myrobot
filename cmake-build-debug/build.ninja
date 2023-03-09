@@ -47,7 +47,7 @@ cmake_ninja_workdir = C$:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build
 #############################################
 # Order-only phony target for Demo0
 
-build cmake_object_order_depends_target_Demo0: phony || cmake_object_order_depends_target_adslib cmake_object_order_depends_target_dplib cmake_object_order_depends_target_myThreadlib cmake_object_order_depends_target_mysocketlib cmake_object_order_depends_target_sdlib cmake_object_order_depends_target_tclib
+build cmake_object_order_depends_target_Demo0: phony || CMakeFiles/Demo0.dir
 
 build CMakeFiles/Demo0.dir/main.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/main.cpp || cmake_object_order_depends_target_Demo0
   DEP_FILE = CMakeFiles\Demo0.dir\main.cpp.obj.d
@@ -55,6 +55,48 @@ build CMakeFiles/Demo0.dir/main.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/914
   INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
   OBJECT_DIR = CMakeFiles\Demo0.dir
   OBJECT_FILE_DIR = CMakeFiles\Demo0.dir
+
+build CMakeFiles/Demo0.dir/src/Ads_Com.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Ads_Com.cpp || cmake_object_order_depends_target_Demo0
+  DEP_FILE = CMakeFiles\Demo0.dir\src\Ads_Com.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo0.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo0.dir\src
+
+build CMakeFiles/Demo0.dir/src/Data_Process.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Data_Process.cpp || cmake_object_order_depends_target_Demo0
+  DEP_FILE = CMakeFiles\Demo0.dir\src\Data_Process.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo0.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo0.dir\src
+
+build CMakeFiles/Demo0.dir/src/Servo_Driver.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Servo_Driver.cpp || cmake_object_order_depends_target_Demo0
+  DEP_FILE = CMakeFiles\Demo0.dir\src\Servo_Driver.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo0.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo0.dir\src
+
+build CMakeFiles/Demo0.dir/src/TimerCounter.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/TimerCounter.cpp || cmake_object_order_depends_target_Demo0
+  DEP_FILE = CMakeFiles\Demo0.dir\src\TimerCounter.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo0.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo0.dir\src
+
+build CMakeFiles/Demo0.dir/src/mySocket.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/mySocket.cpp || cmake_object_order_depends_target_Demo0
+  DEP_FILE = CMakeFiles\Demo0.dir\src\mySocket.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo0.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo0.dir\src
+
+build CMakeFiles/Demo0.dir/src/myThreadfuc.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/myThreadfuc.cpp || cmake_object_order_depends_target_Demo0
+  DEP_FILE = CMakeFiles\Demo0.dir\src\myThreadfuc.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo0.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo0.dir\src
 
 
 # =============================================================================
@@ -64,208 +106,15 @@ build CMakeFiles/Demo0.dir/main.cpp.obj: CXX_COMPILER__Demo0_Debug C$:/Users/914
 #############################################
 # Link the executable Demo0.exe
 
-build Demo0.exe: CXX_EXECUTABLE_LINKER__Demo0_Debug CMakeFiles/Demo0.dir/main.cpp.obj | C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/TcAdsDll.lib || C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a
+build Demo0.exe: CXX_EXECUTABLE_LINKER__Demo0_Debug CMakeFiles/Demo0.dir/main.cpp.obj CMakeFiles/Demo0.dir/src/Ads_Com.cpp.obj CMakeFiles/Demo0.dir/src/Data_Process.cpp.obj CMakeFiles/Demo0.dir/src/Servo_Driver.cpp.obj CMakeFiles/Demo0.dir/src/TimerCounter.cpp.obj CMakeFiles/Demo0.dir/src/mySocket.cpp.obj CMakeFiles/Demo0.dir/src/myThreadfuc.cpp.obj | C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/TcAdsDll.lib
   FLAGS = -g
-  LINK_LIBRARIES = C:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a  -lws2_32  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/TcAdsDll.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug   -LC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  LINK_LIBRARIES = -lws2_32  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/TcAdsDll.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Demo0.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_FILE = Demo0.exe
   TARGET_IMPLIB = libDemo0.dll.a
   TARGET_PDB = Demo0.exe.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target adslib
-
-
-#############################################
-# Order-only phony target for adslib
-
-build cmake_object_order_depends_target_adslib: phony || CMakeFiles/adslib.dir
-
-build CMakeFiles/adslib.dir/src/Ads_Com.cpp.obj: CXX_COMPILER__adslib_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Ads_Com.cpp || cmake_object_order_depends_target_adslib
-  DEP_FILE = CMakeFiles\adslib.dir\src\Ads_Com.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
-  OBJECT_DIR = CMakeFiles\adslib.dir
-  OBJECT_FILE_DIR = CMakeFiles\adslib.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target adslib
-
-
-#############################################
-# Link the static library C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libadslib.a
-
-build C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a: CXX_STATIC_LIBRARY_LINKER__adslib_Debug CMakeFiles/adslib.dir/src/Ads_Com.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\adslib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libadslib.a
-  TARGET_PDB = adslib.a.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target dplib
-
-
-#############################################
-# Order-only phony target for dplib
-
-build cmake_object_order_depends_target_dplib: phony || CMakeFiles/dplib.dir
-
-build CMakeFiles/dplib.dir/src/Data_Process.cpp.obj: CXX_COMPILER__dplib_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Data_Process.cpp || cmake_object_order_depends_target_dplib
-  DEP_FILE = CMakeFiles\dplib.dir\src\Data_Process.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
-  OBJECT_DIR = CMakeFiles\dplib.dir
-  OBJECT_FILE_DIR = CMakeFiles\dplib.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target dplib
-
-
-#############################################
-# Link the static library C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libdplib.a
-
-build C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a: CXX_STATIC_LIBRARY_LINKER__dplib_Debug CMakeFiles/dplib.dir/src/Data_Process.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\dplib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libdplib.a
-  TARGET_PDB = dplib.a.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target mysocketlib
-
-
-#############################################
-# Order-only phony target for mysocketlib
-
-build cmake_object_order_depends_target_mysocketlib: phony || CMakeFiles/mysocketlib.dir
-
-build CMakeFiles/mysocketlib.dir/src/mySocket.cpp.obj: CXX_COMPILER__mysocketlib_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/mySocket.cpp || cmake_object_order_depends_target_mysocketlib
-  DEP_FILE = CMakeFiles\mysocketlib.dir\src\mySocket.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
-  OBJECT_DIR = CMakeFiles\mysocketlib.dir
-  OBJECT_FILE_DIR = CMakeFiles\mysocketlib.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target mysocketlib
-
-
-#############################################
-# Link the static library C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libmysocketlib.a
-
-build C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a: CXX_STATIC_LIBRARY_LINKER__mysocketlib_Debug CMakeFiles/mysocketlib.dir/src/mySocket.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\mysocketlib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libmysocketlib.a
-  TARGET_PDB = mysocketlib.a.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target myThreadlib
-
-
-#############################################
-# Order-only phony target for myThreadlib
-
-build cmake_object_order_depends_target_myThreadlib: phony || CMakeFiles/myThreadlib.dir
-
-build CMakeFiles/myThreadlib.dir/src/myThreadfuc.cpp.obj: CXX_COMPILER__myThreadlib_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/myThreadfuc.cpp || cmake_object_order_depends_target_myThreadlib
-  DEP_FILE = CMakeFiles\myThreadlib.dir\src\myThreadfuc.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
-  OBJECT_DIR = CMakeFiles\myThreadlib.dir
-  OBJECT_FILE_DIR = CMakeFiles\myThreadlib.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target myThreadlib
-
-
-#############################################
-# Link the static library C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libmyThreadlib.a
-
-build C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a: CXX_STATIC_LIBRARY_LINKER__myThreadlib_Debug CMakeFiles/myThreadlib.dir/src/myThreadfuc.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\myThreadlib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libmyThreadlib.a
-  TARGET_PDB = myThreadlib.a.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target sdlib
-
-
-#############################################
-# Order-only phony target for sdlib
-
-build cmake_object_order_depends_target_sdlib: phony || CMakeFiles/sdlib.dir
-
-build CMakeFiles/sdlib.dir/src/Servo_Driver.cpp.obj: CXX_COMPILER__sdlib_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Servo_Driver.cpp || cmake_object_order_depends_target_sdlib
-  DEP_FILE = CMakeFiles\sdlib.dir\src\Servo_Driver.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
-  OBJECT_DIR = CMakeFiles\sdlib.dir
-  OBJECT_FILE_DIR = CMakeFiles\sdlib.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target sdlib
-
-
-#############################################
-# Link the static library C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libsdlib.a
-
-build C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a: CXX_STATIC_LIBRARY_LINKER__sdlib_Debug CMakeFiles/sdlib.dir/src/Servo_Driver.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\sdlib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libsdlib.a
-  TARGET_PDB = sdlib.a.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target tclib
-
-
-#############################################
-# Order-only phony target for tclib
-
-build cmake_object_order_depends_target_tclib: phony || CMakeFiles/tclib.dir
-
-build CMakeFiles/tclib.dir/src/TimerCounter.cpp.obj: CXX_COMPILER__tclib_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/TimerCounter.cpp || cmake_object_order_depends_target_tclib
-  DEP_FILE = CMakeFiles\tclib.dir\src\TimerCounter.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
-  OBJECT_DIR = CMakeFiles\tclib.dir
-  OBJECT_FILE_DIR = CMakeFiles\tclib.dir\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target tclib
-
-
-#############################################
-# Link the static library C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libtclib.a
-
-build C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a: CXX_STATIC_LIBRARY_LINKER__tclib_Debug CMakeFiles/tclib.dir/src/TimerCounter.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\tclib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = C:\Users\91418\CLionProjects\Clion_type_demo0\lib\libtclib.a
-  TARGET_PDB = tclib.a.dbg
 
 
 #############################################
@@ -295,30 +144,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build Demo0: phony Demo0.exe
 
-build adslib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a
-
-build dplib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a
-
-build libadslib.a: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a
-
-build libdplib.a: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a
-
-build libmyThreadlib.a: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a
-
-build libmysocketlib.a: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a
-
-build libsdlib.a: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a
-
-build libtclib.a: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a
-
-build myThreadlib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a
-
-build mysocketlib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a
-
-build sdlib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a
-
-build tclib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a
-
 # =============================================================================
 # Folder targets.
 
@@ -327,7 +152,7 @@ build tclib: phony C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a
 #############################################
 # Folder: C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug
 
-build all: phony Demo0.exe C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libadslib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libdplib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmysocketlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libmyThreadlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libsdlib.a C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/libtclib.a
+build all: phony Demo0.exe
 
 # =============================================================================
 # Built-in targets

@@ -40,6 +40,7 @@ public:
     auto build_socket() -> int;
     void mysocket_send();
     void mysocket_recv(std::vector<DTS>& sdata);
+    void mysocket_recv2(std::vector<DTS>& sdata);
 
 private:
     SOCKET mysocket;

@@ -96,6 +96,32 @@ void Mysocket::mysocket_recv(std::vector<DTS>& sdata)
     }
     iResult = -1;
 }
+
+void Mysocket::mysocket_recv2(std::vector<DTS>& sdata)
+{
+    while (iResult > 0) {
+        std::array<char, DEFAULT_BUFLEN> recvbuf;
+        iResult = recv(mysocket, &recvbuf.front(), DEFAULT_BUFLEN, 0);
+        if (iResult > 0) {
+            for(int i =0;i<2;i++){
+
+            }
+            auto temp = (int *)&recvbuf.front();
+            auto temp2 = (float*)&recvbuf.front()+2;
+            int iter = 0;
+            th_mutex.lock();
+            for (auto& child_servo : sdata) {
+                child_servo.Target_Pos = dp::t2p(temp[iter]);
+                iter++;
+            }
+            th_mutex.unlock();
+            std::cout << temp[0] << "," << temp[1] << std::endl;
+            std::cout << temp2[0] << "," << temp2[1] << std::endl;
+        }
+    }
+    iResult = -1;
+}
+
 void Mysocket::mysocket_send()
 {
     std::vector<DFS> gdata(2);

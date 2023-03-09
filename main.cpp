@@ -35,11 +35,6 @@ auto main() -> int
 //    local_data = txt.read_from_file(ans, path);
     // std::cout << stof(local_data[2][1]);
     //
-    TimerCounter mytc;
-    mytc.Start();
-    Sleep(1000);
-    mytc.Stop();
-    std::cout << mytc.dbTime * 1000;
     sd myservo(myads);
     Mysocket server;
     server.build_socket();
@@ -47,18 +42,18 @@ auto main() -> int
     std::vector<DFS> gdata(2);
     std::vector<float> Joint(2);
 
-    s_err = myservo.Servo_On(sdata, gdata);
+//    s_err = myservo.Servo_On(sdata, gdata);
 
     bool* s_t_flag = new bool(true);
     // std::thread s_t(mt::status_print, s_t_flag, 10);
     // s_t.detach();
 
-    std::thread socket_get(&Mysocket::mysocket_recv, &server, std::ref(sdata));
+    std::thread socket_get(&Mysocket::mysocket_recv2, &server, std::ref(sdata));
     socket_get.detach();
 
-    std::thread socket_send(&Mysocket::mysocket_send, &server);
-    socket_send.detach();
-
+//    std::thread socket_send(&Mysocket::mysocket_send, &server);
+//    socket_send.detach();
+    /*
     while (true) {
         // 调用关节角
         Joint = dp::starget_2j(sdata);
@@ -76,5 +71,9 @@ auto main() -> int
         }
     }
     s_err = myservo.Servo_Off(sdata, gdata);
+     */
+    while(1){
+
+    }
     return 0;
 }
