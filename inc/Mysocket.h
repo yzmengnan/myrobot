@@ -24,6 +24,7 @@
 #include <winsock2.h>
 #include "windows.h"
 #include <ws2tcpip.h>
+#include <thread>
 //
 #include "ADS.h"
 #include "Data_Define.h"

@@ -19,4 +19,7 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/TcAdsDll.lib)
 
 project(Demo1)
 
-add_executable(Demo1 demo1.cpp)
+add_executable(Demo1 demo1.cpp ${DIR_SRCS})
+
+target_link_libraries(Demo1 ws2_32)
+target_link_libraries(Demo1 ${PROJECT_SOURCE_DIR}/lib/TcAdsDll.lib)

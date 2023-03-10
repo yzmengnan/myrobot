@@ -132,6 +132,48 @@ build CMakeFiles/Demo1.dir/demo1.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91
   OBJECT_DIR = CMakeFiles\Demo1.dir
   OBJECT_FILE_DIR = CMakeFiles\Demo1.dir
 
+build CMakeFiles/Demo1.dir/src/Ads_Com.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Ads_Com.cpp || cmake_object_order_depends_target_Demo1
+  DEP_FILE = CMakeFiles\Demo1.dir\src\Ads_Com.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo1.dir\src
+
+build CMakeFiles/Demo1.dir/src/Data_Process.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Data_Process.cpp || cmake_object_order_depends_target_Demo1
+  DEP_FILE = CMakeFiles\Demo1.dir\src\Data_Process.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo1.dir\src
+
+build CMakeFiles/Demo1.dir/src/Servo_Driver.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/Servo_Driver.cpp || cmake_object_order_depends_target_Demo1
+  DEP_FILE = CMakeFiles\Demo1.dir\src\Servo_Driver.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo1.dir\src
+
+build CMakeFiles/Demo1.dir/src/TimerCounter.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/TimerCounter.cpp || cmake_object_order_depends_target_Demo1
+  DEP_FILE = CMakeFiles\Demo1.dir\src\TimerCounter.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo1.dir\src
+
+build CMakeFiles/Demo1.dir/src/mySocket.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/mySocket.cpp || cmake_object_order_depends_target_Demo1
+  DEP_FILE = CMakeFiles\Demo1.dir\src\mySocket.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo1.dir\src
+
+build CMakeFiles/Demo1.dir/src/myThreadfuc.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91418/CLionProjects/Clion_type_demo0/src/myThreadfuc.cpp || cmake_object_order_depends_target_Demo1
+  DEP_FILE = CMakeFiles\Demo1.dir\src\myThreadfuc.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -IC:/Users/91418/CLionProjects/Clion_type_demo0/inc
+  OBJECT_DIR = CMakeFiles\Demo1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Demo1.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Demo1
@@ -140,9 +182,9 @@ build CMakeFiles/Demo1.dir/demo1.cpp.obj: CXX_COMPILER__Demo1_Debug C$:/Users/91
 #############################################
 # Link the executable Demo1.exe
 
-build Demo1.exe: CXX_EXECUTABLE_LINKER__Demo1_Debug CMakeFiles/Demo1.dir/demo1.cpp.obj
+build Demo1.exe: CXX_EXECUTABLE_LINKER__Demo1_Debug CMakeFiles/Demo1.dir/demo1.cpp.obj CMakeFiles/Demo1.dir/src/Ads_Com.cpp.obj CMakeFiles/Demo1.dir/src/Data_Process.cpp.obj CMakeFiles/Demo1.dir/src/Servo_Driver.cpp.obj CMakeFiles/Demo1.dir/src/TimerCounter.cpp.obj CMakeFiles/Demo1.dir/src/mySocket.cpp.obj CMakeFiles/Demo1.dir/src/myThreadfuc.cpp.obj | C$:/Users/91418/CLionProjects/Clion_type_demo0/lib/TcAdsDll.lib
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lws2_32  C:/Users/91418/CLionProjects/Clion_type_demo0/lib/TcAdsDll.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Demo1.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

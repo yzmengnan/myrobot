@@ -127,18 +127,20 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
     s_err=iResult;
 }
 
+//待修改，需要完善服务器数据报文
 void Mysocket::mysocket_send(ads myads) {
     std::vector<DFS> gdata(Servo_number);
-    std::vector<float> temp;
+    std::vector<float> temp{2.32, 2.05, 2.5, 12.9, 5.6, 2.7, 9.2, 110.01};
     std::vector<uint8_t *> senddata(gdata.size());
     while (iResult > 0) {
-        myads.get(gdata);
-        temp = dp::sreal_2j(gdata);
+//        myads.get(gdata);
+//        temp = dp::sreal_2j(gdata);
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }
-        iResult = send(mysocket, (char *) senddata.front(), DEFAULT_BUFLEN, 0);
-        Sleep(2);
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        iResult = send(mysocket, (char *) senddata.front(), 32, 0);
+
     }
     iResult = -1;
 }
