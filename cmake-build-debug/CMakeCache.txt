@@ -157,7 +157,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Demo0
+CMAKE_PROJECT_NAME:STATIC=Demo1
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/ranlib.exe
@@ -247,6 +247,24 @@ Demo0_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Demo0_SOURCE_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0
+
+//Value Computed by CMake
+Demo1_BINARY_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug
+
+//Value Computed by CMake
+Demo1_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Demo1_SOURCE_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0
+
+//Value Computed by CMake
+HELLO_BINARY_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0/cmake-build-debug
+
+//Value Computed by CMake
+HELLO_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+HELLO_SOURCE_DIR:STATIC=C:/Users/91418/CLionProjects/Clion_type_demo0
 
 
 ########################

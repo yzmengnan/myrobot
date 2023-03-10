@@ -108,8 +108,6 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             recvdata.Cartesian_Velocity_set = (float *) &recvbuf.front() + recvdata.Cartesian_Velocity_set_location;
             recvdata.Tail_check = (int *) &recvbuf.front() + recvdata.Tail_check_location;
             std::vector<float> jointdata(recvdata.Joint_Position_set, recvdata.Joint_Position_set + Servo_number);
-
-
             th_mutex.lock();
             //
             dp::j2s(jointdata, sdata);
@@ -130,7 +128,7 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
 }
 
 void Mysocket::mysocket_send(ads myads) {
-    std::vector<DFS> gdata(2);
+    std::vector<DFS> gdata(Servo_number);
     std::vector<float> temp;
     std::vector<uint8_t *> senddata(gdata.size());
     while (iResult > 0) {
