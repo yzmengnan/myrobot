@@ -112,23 +112,26 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             //
             dp::j2s(jointdata, sdata);
             th_mutex.unlock();
-
-
-            if (*recvdata.Command == 45) {
+            if (*recvdata.Command & 0b10) //BIT1为1，则上使能
+            {
                 run_flag = 1;
+            } else {
+                run_flag = 0;
             }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
-                      << recvdata.Command[0]
-                      << ",Joint_Position_set:" << recvdata.Joint_Position_set[0] << ","
-                      << recvdata.Joint_Position_set[1] << std::endl;
+                      << recvdata.Command[0] << ",Joint_Position_set:";
+            for (int i = 0; i < 8; i++) {
+                std::cout << recvdata.Joint_Position_set[i] << ",";
+            }
+            std::cout << std::endl;
         }
     }
-    std::cout<<"Socket Communication Error:"<<iResult<<std::endl;
-    s_err=iResult;
+    std::cout << "Socket Communication Error:" << iResult << std::endl;
+    s_err = iResult;
 }
 
 //待修改，需要完善服务器数据报文
-void Mysocket::mysocket_send(ads myads) {
+void Mysocket::mysocket_send(const ads &myads) {
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> temp{2.32, 2.05, 2.5, 12.9, 5.6, 2.7, 9.2, 110.01};
     std::vector<uint8_t *> senddata(gdata.size());
@@ -138,8 +141,8 @@ void Mysocket::mysocket_send(ads myads) {
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
-        iResult = send(mysocket, (char *) senddata.front(), 32, 0);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        iResult = send(mysocket, (char *) senddata.front(), 4 * senddata.size(), 0);
 
     }
     iResult = -1;

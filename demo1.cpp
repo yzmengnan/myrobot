@@ -74,5 +74,6 @@ auto main() -> int {
             break;
         }
     }
+    myservo.Servo_Off(sdata, gdata);
     return 0;
 }

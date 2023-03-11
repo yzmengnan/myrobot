@@ -90,8 +90,11 @@ auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata, std::vector<DFS> &gdata) ->
         child_servo.Control_Word = 0;
     }
     error_code = pmyads->set(sdata);
-    if (error_code < 0)
+    if (error_code < 0) {
+
+        std::cout << "Servo Operation disabled failure !!" << std::endl;
         return error_code;
+    }
     std::cout << "All Servos Operation disabled!" << std::endl;
     return 0;
 }
