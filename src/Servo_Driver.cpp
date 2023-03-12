@@ -102,8 +102,6 @@ auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata, std::vector<DFS> &gdata) ->
 auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag) -> int {
     int error_code = 0;
     bool servo_state = true;
-    int *const flag = new int(1);
-
     if (servo_operation_ready_flag == 0) {
         //设置PP工作模式
         for (auto &child_servo: sdata) {
@@ -148,9 +146,11 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
         if (error_code < 0) {
             return error_code;
         }
-        std::thread th1(mt::tc, flag, 20);
+        //重置标志位指针
+        *servo_time_lag_flag = 1;
+        std::thread th1(mt::tc, servo_time_lag_flag, 20);
         th1.detach();
-        while (servo_state && *flag) {
+        while (servo_state && *servo_time_lag_flag) {
             int servo_get_number = 0;
             // 获取伺服状态字
             th_mutex.lock();
@@ -178,7 +178,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
             th_mutex.unlock();
             return error_code;
         }
-            // 否则，则是*flag=0退出 由th1最大延时后，伺服依旧没有响应
+            // 否则，则是*servo_time_lag_flag=0退出 由th1最大延时后，伺服依旧没有响应
         else {
             std::cout << "Servo lag!" << std::endl;
             error_code = -3001;
@@ -199,8 +199,6 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
 auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag,
                                          int rpm) -> int {
     int error_code = 0;
-    bool servo_state = true;
-    int *flag = new int(1);
     error_code = pmyads->get(gdata);
     if (error_code < 0)
         return error_code;

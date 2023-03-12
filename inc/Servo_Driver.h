@@ -59,6 +59,7 @@ public:
 private:
     int servo_operation_ready_flag=0; //=1表示pp就位，=0表示未就位，=2表示csp就位
     ads *pmyads = nullptr;
+    int *const servo_time_lag_flag = new int(1);
 };
 
 #endif
