@@ -213,6 +213,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
     for (auto &child_rate: rate) {
         child_rate = child_rate / max_delta_p;
     }
+    //rpm 是关节转速
     for (int i = 0; i < sdata.size(); i++) {
         sdata[i].Profile_Velocity = dp::t2p(rate[i] * 6.0 * rpm);
     }
