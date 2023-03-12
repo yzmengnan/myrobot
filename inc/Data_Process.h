@@ -32,7 +32,7 @@ public:
      * @param {double} revolution
      * @return {*}
      */
-    static auto t2p(double revolution) -> INT32;
+    static auto t2p(double theta) -> INT32;
 
     /**
      * @description:  Joint_theta up to servo

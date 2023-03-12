@@ -15,8 +15,8 @@ auto dp::p2t(INT32 pulse) -> float {
     return float(double(pulse) / R_pulse_of_encoder / R_reductor * 360);
 }
 
-auto dp::t2p(double revolution) -> INT32 {
-    return (INT32) (revolution / 360 * R_reductor * R_pulse_of_encoder);
+auto dp::t2p(double theta) -> INT32 {
+    return (INT32) (theta / 360 * R_reductor * R_pulse_of_encoder);
 }
 
 auto dp::j2s(std::vector<float> Joint_theta, std::vector<DTS> &sdata) -> int {

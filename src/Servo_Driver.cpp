@@ -145,7 +145,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
         error_code = pmyads->set(sdata);
         th_mutex.unlock();
         // 开启线程th1，设置延迟最大20ms即退出
-        if(error_code<0){
+        if (error_code < 0) {
             return error_code;
         }
         std::thread th1(mt::tc, flag, 20);
@@ -214,12 +214,12 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
         child_rate = child_rate / max_delta_p;
     }
     for (int i = 0; i < sdata.size(); i++) {
-        sdata[i].Profile_Velocity = dp::t2p(rate[i] / 6.0 * R_reductor * rpm);
+        sdata[i].Profile_Velocity = dp::t2p(rate[i] * 6.0 * rpm);
     }
     error_code = pmyads->set(sdata);
     if (error_code < 0)
         return error_code;
-    error_code = Servo_PTP_Basic(sdata,gdata,CIOFF);
+    error_code = Servo_PTP_Basic(sdata, gdata, CIOFF);
     return error_code;
 }
 
