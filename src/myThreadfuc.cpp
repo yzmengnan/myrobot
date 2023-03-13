@@ -39,8 +39,20 @@ void mt::status_print(bool *flag, const int cycletime,ads myads) {
 
 void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, sd mysd) {
     int error_code=0;
+    int servo_on_mark=1;
+    int servo_off_mark=1;
     while(true){
-        if(runflag==1){
+        if(runflag==1&&servo_on_mark){
+            error_code = mysd.Servo_On(sdata,gdata);
+            servo_on_mark=0;
+            servo_off_mark=1;
+        }
+        else if(runflag==0&&servo_off_mark){
+            error_code = mysd.Servo_Off(sdata,gdata);
+            servo_off_mark=0;
+            servo_on_mark=1;
+        }
+        else if(runflag==2){
             error_code=mysd.Servo_PTP_Basic_isSync(sdata,gdata,CIOFF,100);
 //            std::cout<<error_code<<std::endl;
             std::cout<<"DRIVE MODE:"<<runflag<<std::endl;

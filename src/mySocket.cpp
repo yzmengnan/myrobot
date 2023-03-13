@@ -115,8 +115,11 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             if (*recvdata.Command & 0b10) //BIT1为1，则上使能
             {
                 run_flag = 1;
-            } else {
+            } else{
                 run_flag = 0;
+            }
+            if (*recvdata.Command &0b100){
+                run_flag=2;
             }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0] << ",Joint_Position_set:";
@@ -131,13 +134,13 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
 }
 
 //待修改，需要完善服务器数据报文
-void Mysocket::mysocket_send(const ads &myads) {
+void Mysocket::mysocket_send(ads &myads) {
     std::vector<DFS> gdata(Servo_number);
-    std::vector<float> temp{2.32, 2.05, 2.5, 12.9, 5.6, 2.7, 9.2, 110.01};
+    std::vector<float> temp(Servo_number);
     std::vector<uint8_t *> senddata(gdata.size());
     while (iResult > 0) {
-//        myads.get(gdata);
-//        temp = dp::sreal_2j(gdata);
+        myads.get(gdata);
+        temp = dp::sreal_2j(gdata);
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }

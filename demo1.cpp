@@ -35,9 +35,7 @@ auto main() -> int {
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> Joint(Servo_number);
 
-//    s_err = myservo.Servo_On(sdata, gdata);
-
-    bool *s_t_flag = new bool(true);
+//    bool *s_t_flag = new bool(true);
     // std::thread s_t(mt::status_print, s_t_flag, 10);
     // s_t.detach();
 
@@ -46,27 +44,8 @@ auto main() -> int {
 //
     std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), myservo);
     drive.detach();
-    std::thread socket_send(&Mysocket::mysocket_send, &server, myads);
+    std::thread socket_send(&Mysocket::mysocket_send, &server, std::ref(myads));
     socket_send.detach();
-    /*
-    while (true) {
-        // 调用关节角
-        Joint = dp::starget_2j(sdata);
-        s_err = myservo.Servo_PTP_Joint_isSync(Joint, sdata, gdata, 100);
-        // 或者
-        //  s_err = myservo.Servo_PTP_Basic_isSync(sdata, gdata, CIOFF, 100);
-        if (s_err < 0) {
-            std::cout << "System Error! Check Error Code: " << s_err << std::endl;
-            break;
-        }
-        s_err = server.iResult;
-        if (s_err <= 0) {
-            std::cout << "System Error! Check Error Code: " << s_err << std::endl;
-            break;
-        }
-    }
-    s_err = myservo.Servo_Off(sdata, gdata);
-     */
     while (TRUE) {
         if (s_err <= 0) {
             std::cout << "System Error:" << s_err << std::endl;
