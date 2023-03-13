@@ -29,7 +29,7 @@ void mt::status_print(bool *flag, const int cycletime,ads myads) {
         // th_mutex.unlock();
         int joint_number = 0;
         for (DFS child_servo: gdata) {
-            std::cout << "Joint" << joint_number << " " << dp::p2t(child_servo.Actual_Pos) << ",  ";
+            std::cout << "Joint" << joint_number << " " << dp::p2t(child_servo.Actual_Pos,joint_number) << ",  ";
             joint_number++;
         }
         std::cout << std::endl;
@@ -57,7 +57,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
 //            std::cout<<error_code<<std::endl;
             std::cout<<"DRIVE MODE:"<<runflag<<std::endl;
             std::cout<<"Target_position:"<<sdata[0].Target_Pos<<","<<sdata[1].Target_Pos<<std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+//            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
     }
 }

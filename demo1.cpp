@@ -9,12 +9,11 @@
 #include "ReadTXT.hpp"
 #include "Servo_Driver.h"
 #include "TimerCounter.h"
-// DIO headers
 
 // Gloabl varible
 std::atomic_int s_err(1);
 
-std::atomic_int run_flag(0);//0,默认，1：PP控制启动，2：PP连续运动，3：CSP运动
+std::atomic_int run_flag(0);//0：无使能，1：使能，2：PP连续运动，3：CSP运动
 
 std::mutex th_mutex;
 

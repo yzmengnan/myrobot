@@ -203,9 +203,9 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
     if (error_code < 0)
         return error_code;
     std::vector<float> rate;
-    rate.reserve(2);
+    rate.reserve(Servo_number);
     for (int i = 0; i < gdata.size(); i++) {
-        rate.push_back(dp::p2t(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos)));
+        rate.push_back(dp::p2t(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos),i));
     }
     float max_delta_p = *std::max_element(rate.begin(), rate.end());
     for (auto &child_rate: rate) {
@@ -213,7 +213,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
     }
     //rpm 是关节转速
     for (int i = 0; i < sdata.size(); i++) {
-        sdata[i].Profile_Velocity = dp::t2p(rate[i] * 6.0 * rpm);
+        sdata[i].Profile_Velocity = dp::t2p(rate[i] * 6.0 * rpm,i);
     }
     error_code = pmyads->set(sdata);
     if (error_code < 0)
@@ -253,7 +253,7 @@ Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<
     rate.reserve(2);
     // 计算目标与当前相对位置差
     for (int i = 0; i < gdata.size(); i++) {
-        rate.push_back(dp::p2t(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos)));
+        rate.push_back(dp::p2t(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos),i));
     }
     // 取出最大的差值
     float max_delta_p = *std::max_element(rate.begin(), rate.end());
@@ -262,7 +262,7 @@ Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<
         child_rate = child_rate / max_delta_p;
     }
     for (int i = 0; i < sdata.size(); i++) {
-        sdata[i].Profile_Velocity = dp::t2p(rate[i] / 6.0 * R_reductor * rpm);
+        sdata[i].Profile_Velocity = dp::t2p(rate[i] / 6.0  * rpm,i);
     }
     // 发送关节速度信息
     error_code = pmyads->set(sdata);

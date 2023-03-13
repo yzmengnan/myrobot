@@ -17,7 +17,7 @@
 
 
 #define R_pulse_of_encoder 0x7fffff
-#define R_reductor 20
+extern int R_reductor[];
 using dp = class Data_Process {
 public:
     /**
@@ -25,14 +25,14 @@ public:
      * @param {INT32} pulse
      * @return {*}
      */
-    static auto p2t(INT32 pulse) -> float;
+    static auto p2t(INT32 pulse,int& i) -> float;
 
     /**
      * @description:  theta to pulse of encoder, no data process
      * @param {double} revolution
      * @return {*}
      */
-    static auto t2p(double theta) -> INT32;
+    static auto t2p(double theta,int &i) -> INT32;
 
     /**
      * @description:  Joint_theta up to servo

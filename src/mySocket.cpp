@@ -85,7 +85,7 @@ void Mysocket::mysocket_recv(std::vector<DTS> &sdata) {
             int iter = 0;
             th_mutex.lock();
             for (auto &child_servo: sdata) {
-                child_servo.Target_Pos = dp::t2p(temp[iter]);
+                child_servo.Target_Pos = dp::t2p(temp[iter],iter);
                 iter++;
             }
             th_mutex.unlock();
