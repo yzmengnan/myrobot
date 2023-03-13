@@ -20,13 +20,10 @@ void mt::status_print(bool *flag, const int cycletime,ads myads) {
     std::vector<DFS> gdata(2);
     while (s_err >= 0 && flag) {
         std::this_thread::sleep_for(std::chrono::milliseconds(cycletime));
-        // Sleep(cycletime);
-        // th_mutex.lock();
         s_err = myads.get(gdata);
         if (s_err < 0) {
             std::cout << "status_print get data error!" << std::endl;
         }
-        // th_mutex.unlock();
         int joint_number = 0;
         for (DFS child_servo: gdata) {
             std::cout << "Joint" << joint_number << " " << dp::p2t(child_servo.Actual_Pos,joint_number) << ",  ";
@@ -38,7 +35,6 @@ void mt::status_print(bool *flag, const int cycletime,ads myads) {
 }
 
 void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, sd mysd) {
-    int error_code=0;
     int servo_on_mark=1;
     int servo_off_mark=1;
     while(true){
@@ -59,6 +55,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
             std::cout<<"Target_position:"<<sdata[0].Target_Pos<<","<<sdata[1].Target_Pos<<std::endl;
 //            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
+        s_err = error_code;
     }
 }
 

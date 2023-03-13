@@ -15,7 +15,7 @@
 #include "ADS.h"
 #include "Data_Define.h"
 #include "Data_Process.h"
-#include "Servo_Driver.h"
+#include "Servo_DRIVE.h"
 #include <chrono>
 #include <iostream>
 #include <mutex>
@@ -35,6 +35,8 @@ public:
     static void status_print(bool *flag, const int cycletime,ads myads);
 
     void DRIVE(std::atomic_int & runflag,std::vector<DTS>&sdata,std::vector<DFS>&gdata,Servo_Drive mysd);
+private:
+    int error_code =0;
 };
 
 //#endif

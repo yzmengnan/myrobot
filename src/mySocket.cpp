@@ -115,11 +115,11 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             if (*recvdata.Command & 0b10) //BIT1为1，则上使能
             {
                 run_flag = 1;
+                if (*recvdata.Command &0b100){
+                    run_flag=2;
+                }
             } else{
                 run_flag = 0;
-            }
-            if (*recvdata.Command &0b100){
-                run_flag=2;
             }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0] << ",Joint_Position_set:";
