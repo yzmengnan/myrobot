@@ -53,7 +53,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
             servo_on_mark=1;
         }
         else if(runflag==2){
-            error_code=mysd.Servo_PTP_Basic_isSync(sdata,gdata,CIOFF,100);
+            error_code=mysd.Servo_PTP_Basic_isSync(sdata,gdata,CIOFF,1);
 //            std::cout<<error_code<<std::endl;
             std::cout<<"DRIVE MODE:"<<runflag<<std::endl;
             std::cout<<"Target_position:"<<sdata[0].Target_Pos<<","<<sdata[1].Target_Pos<<std::endl;

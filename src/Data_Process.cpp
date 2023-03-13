@@ -11,7 +11,7 @@
 
 #include "Data_Process.h"
 
-int R_reductor[8]={20,60,20,20,20,20,20,20};
+float R_reductor[9]={285,213.7,153.9,146,144.9,33,0.5,20,0.5};
 
 auto dp::p2t(INT32 pulse,int& i ) -> float {
     return float(double(pulse) / R_pulse_of_encoder / R_reductor[i] * 360);
