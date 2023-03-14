@@ -15,11 +15,11 @@
 
 #define DTS_SIZE 20
 #define DFS_SIZE 12
-#define Servo_number 2
+#define Servo_number 9
 using DTS = struct Data_To_Servo {
     UINT16 Control_Word = 0;
     INT32 Target_Pos = 0;
-    UINT32 Profile_Velocity = 0xffffffff;
+    UINT32 Profile_Velocity = 0x7fffffff;
     UINT32 Max_Velocity = 3000; // rpm
     INT8 Mode_of_Operation = 1;
 };
@@ -33,7 +33,7 @@ using DFS = struct Data_From_Servo {
 };
 using pDFS = DFS *;
 
-using Recv = struct Recv_from_Client {
+using Rrecv = struct Recv_from_Client {
     int *Head_check;//int32
     int *Command;//int32
     float *Joint_Position_set;//float

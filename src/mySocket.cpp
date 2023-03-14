@@ -123,7 +123,7 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
                       << recvdata.Command[0] << ",Joint_Position_set:";
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < Servo_number; i++) {
                 std::cout << recvdata.Joint_Position_set[i] << ",";
             }
             std::cout << std::endl;

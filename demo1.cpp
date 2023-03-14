@@ -3,7 +3,6 @@
 #include <mutex>
 #include <thread>
 #include <vector>
-#include <direct.h>
 #include "string.h"
 // MYdemo headers
 #include "Mysocket.h"
@@ -44,14 +43,15 @@ auto main() -> int {
     std::thread socket_get(&Mysocket::mysocket_recv2, &server, std::ref(sdata));
     socket_get.detach();
 
-    //下位机发送代码，发送下位机状态等数据
+    //下位机发送线程，发送下位机状态等数据
     std::thread socket_send(&Mysocket::mysocket_send, &server, std::ref(myads));
     socket_send.detach();
 
-    ///下位机驱动线程，根据指令执行
+    //下位机驱动线程，根据指令执行
     std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), myservo);
     drive.detach();
 
+    //主线程堵塞，遇错退出
     while (TRUE) {
         if (s_err <= 0) {
             std::cout << "System Error:" << s_err << std::endl;

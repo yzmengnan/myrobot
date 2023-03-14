@@ -40,7 +40,7 @@ extern std::atomic_int run_flag;
 
 class Mysocket {
 public:
-    Recv recvdata;
+    Rrecv recvdata;
     Ssend ssenddata;
 
     Mysocket() = default;

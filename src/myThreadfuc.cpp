@@ -17,7 +17,7 @@ void mt::tc(int *const flag, int breakout_value) {
 }
 
 void mt::status_print(bool *flag, const int cycletime,ads myads) {
-    std::vector<DFS> gdata(2);
+    std::vector<DFS> gdata(Servo_number);
     while (s_err >= 0 && flag) {
         std::this_thread::sleep_for(std::chrono::milliseconds(cycletime));
         s_err = myads.get(gdata);
@@ -55,7 +55,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
             std::cout<<"Target_position:"<<sdata[0].Target_Pos<<","<<sdata[1].Target_Pos<<std::endl;
 //            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
-        s_err = error_code;
+//        s_err = error_code;
     }
 }
 
