@@ -11,12 +11,9 @@
 #include "Servo_DRIVE.h"
 #include "TimerCounter.h"
 
-
 // Gloabl varible
 std::atomic_int s_err(1);
-
 std::atomic_int run_flag(0);//0：无使能，1：使能，2：PP连续运动，3：CSP运动
-
 std::mutex th_mutex;
 
 ads myads;
