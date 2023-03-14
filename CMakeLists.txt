@@ -8,11 +8,8 @@ include_directories(inc)
 #target_link_libraries(Demo0 ${PROJECT_SOURCE_DIR}/lib/TcAdsDll.lib)
 
 
-
-
-aux_source_directory(src DIR_SRCS)
+#aux_source_directory(src DIR_SRCS)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-
 
 
 add_library(comlib STATIC SRC/Ads_Com.cpp)
@@ -25,10 +22,8 @@ add_library(timecountlib STATIC SRC/TimerCounter.cpp)
 
 project(Demo1)
 
-#add_executable(Demo1 demo1.cpp ${DIR_SRCS})
-
 add_executable(Demo1 demo1.cpp)
 
-target_link_libraries(Demo1  comlib driverlib dplib mtlib socketlib timecountlib)
+target_link_libraries(Demo1 comlib driverlib dplib mtlib socketlib timecountlib)
 target_link_libraries(Demo1 ws2_32)
 target_link_libraries(Demo1 ${PROJECT_SOURCE_DIR}/lib/TcAdsDll.lib)
