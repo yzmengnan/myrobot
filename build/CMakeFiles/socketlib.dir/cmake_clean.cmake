@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libsocketlib.a"
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libsocketlib.pdb"
+  "/LIB/libsocketlib.a"
+  "/LIB/libsocketlib.pdb"
   "CMakeFiles/socketlib.dir/src/mySocket.cpp.obj"
   "CMakeFiles/socketlib.dir/src/mySocket.cpp.obj.d"
 )

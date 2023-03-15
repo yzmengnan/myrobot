@@ -18,7 +18,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="comlib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libcomlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libcomlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -41,7 +41,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="comlib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libcomlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libcomlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -64,7 +64,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="driverlib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdriverlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libdriverlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -87,7 +87,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="driverlib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdriverlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libdriverlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -110,7 +110,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="dplib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdplib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libdplib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -133,7 +133,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="dplib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdplib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libdplib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -156,7 +156,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="mtlib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libmtlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libmtlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -179,7 +179,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="mtlib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libmtlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libmtlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -202,7 +202,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="socketlib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libsocketlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libsocketlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -225,7 +225,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="socketlib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libsocketlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libsocketlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -248,7 +248,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="timecountlib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libtimecountlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libtimecountlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -271,7 +271,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="timecountlib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libtimecountlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libtimecountlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -294,7 +294,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="datarecordlib">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdatarecordlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libdatarecordlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
@@ -317,7 +317,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="datarecordlib/fast">
-				<Option output="C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdatarecordlib.a" prefix_auto="0" extension_auto="0"/>
+				<Option output="/LIB/libdatarecordlib.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/91418/OneDrive/Demo0/ClionProj/build"/>
 				<Option object_output="./"/>
 				<Option type="2"/>

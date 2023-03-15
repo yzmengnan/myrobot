@@ -1,12 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(Demo0)
 set(CMAKE_CXX_STANDARD 23)
 include_directories(inc)
-
-#add_executable(Demo0 demo0.cpp ${DIR_SRCS})
-#target_link_libraries(Demo0 ws2_32)
-#target_link_libraries(Demo0 ${PROJECT_SOURCE_DIR}/lib/TcAdsDll.lib)
-
 
 #aux_source_directory(src DIR_SRCS)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)

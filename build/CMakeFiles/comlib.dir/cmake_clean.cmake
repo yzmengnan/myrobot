@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libcomlib.a"
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libcomlib.pdb"
+  "/LIB/libcomlib.a"
+  "/LIB/libcomlib.pdb"
   "CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj"
   "CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj.d"
 )

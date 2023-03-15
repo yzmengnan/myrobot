@@ -92,13 +92,13 @@ Demo1_EXTERNAL_OBJECTS =
 
 Demo1.exe: CMakeFiles/Demo1.dir/demo1.cpp.obj
 Demo1.exe: CMakeFiles/Demo1.dir/build.make
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libcomlib.a
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdriverlib.a
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdplib.a
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libmtlib.a
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libsocketlib.a
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libtimecountlib.a
-Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libdatarecordlib.a
+Demo1.exe: /LIB/libcomlib.a
+Demo1.exe: /LIB/libdriverlib.a
+Demo1.exe: /LIB/libdplib.a
+Demo1.exe: /LIB/libmtlib.a
+Demo1.exe: /LIB/libsocketlib.a
+Demo1.exe: /LIB/libtimecountlib.a
+Demo1.exe: /LIB/libdatarecordlib.a
 Demo1.exe: C:/Users/91418/OneDrive/Demo0/ClionProj/lib/TcAdsDll.lib
 Demo1.exe: CMakeFiles/Demo1.dir/linklibs.rsp
 Demo1.exe: CMakeFiles/Demo1.dir/objects1.rsp

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libtimecountlib.a"
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libtimecountlib.pdb"
+  "/LIB/libtimecountlib.a"
+  "/LIB/libtimecountlib.pdb"
   "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj"
   "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj.d"
 )

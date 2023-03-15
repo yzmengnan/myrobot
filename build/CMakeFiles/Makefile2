@@ -273,13 +273,13 @@ CMakeFiles/datarecordlib.dir/clean:
 # Target rules for target CMakeFiles/Demo1.dir
 
 # All Build rule for target.
-CMakeFiles/Demo1.dir/all: CMakeFiles/dplib.dir/all
+CMakeFiles/Demo1.dir/all: CMakeFiles/comlib.dir/all
 CMakeFiles/Demo1.dir/all: CMakeFiles/driverlib.dir/all
+CMakeFiles/Demo1.dir/all: CMakeFiles/dplib.dir/all
+CMakeFiles/Demo1.dir/all: CMakeFiles/mtlib.dir/all
+CMakeFiles/Demo1.dir/all: CMakeFiles/socketlib.dir/all
 CMakeFiles/Demo1.dir/all: CMakeFiles/timecountlib.dir/all
 CMakeFiles/Demo1.dir/all: CMakeFiles/datarecordlib.dir/all
-CMakeFiles/Demo1.dir/all: CMakeFiles/mtlib.dir/all
-CMakeFiles/Demo1.dir/all: CMakeFiles/comlib.dir/all
-CMakeFiles/Demo1.dir/all: CMakeFiles/socketlib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo1.dir\build.make CMakeFiles/Demo1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Demo1.dir\build.make CMakeFiles/Demo1.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=1,2 "Built target Demo1"

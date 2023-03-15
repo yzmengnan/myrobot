@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libmtlib.a"
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/lib/libmtlib.pdb"
+  "/LIB/libmtlib.a"
+  "/LIB/libmtlib.pdb"
   "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj"
   "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj.d"
 )
