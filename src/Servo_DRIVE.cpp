@@ -296,7 +296,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                 std::cout << "CSP MODE WORK DOWN!" << std::endl;
                 break;
             } else {
-                std::cout << "Taget Position has sent!" << "Joint_Position:";
+                std::cout << "Target Position has sent!" << "Joint_Position:";
                 for (int i = 0; i < Servo_number; i++) {
                     sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i])*180/3.1415, i);
                     std::cout << stof(local_data[0][i]) << ",";
@@ -311,7 +311,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                     //脉冲差除以8388608得到r/10ms *6000 得到rpm 再乘以跟踪误差比1/k（k>1)
                     sdata[i].Max_Velocity = int(
                             double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929));
-                    std::cout << sdata[i].Max_Velocity << ",";
+//                    std::cout << sdata[i].Max_Velocity << ",";
                 }
                 std::cout << std::endl;
                 error_code = pmyads->set(sdata);

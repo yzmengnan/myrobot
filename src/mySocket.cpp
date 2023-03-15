@@ -85,7 +85,7 @@ void Mysocket::mysocket_recv(std::vector<DTS> &sdata) {
             int iter = 0;
             th_mutex.lock();
             for (auto &child_servo: sdata) {
-                child_servo.Target_Pos = dp::t2p(temp[iter],iter);
+                child_servo.Target_Pos = dp::t2p(temp[iter], iter);
                 iter++;
             }
             th_mutex.unlock();
@@ -108,21 +108,21 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             recvdata.Cartesian_Velocity_set = (float *) &recvbuf.front() + recvdata.Cartesian_Velocity_set_location;
             recvdata.Tail_check = (int *) &recvbuf.front() + recvdata.Tail_check_location;
             std::vector<float> jointdata(recvdata.Joint_Position_set, recvdata.Joint_Position_set + Servo_number);
-//            th_mutex.lock();
-            //
-            dp::j2s(jointdata, sdata);
-//            th_mutex.unlock();
+
             if (*recvdata.Command & 0b10) //BIT1为1，则上使能
             {
                 run_flag = 1;
-                if (*recvdata.Command &0b100){
-                    run_flag=2;
+                if (*recvdata.Command & 0b100) {
+                    run_flag = 2;
+                    th_mutex.lock();
+                    dp::j2s(jointdata, sdata);
+                    th_mutex.unlock();
                 }
-                //BIT3为1，则CSP模式，runflag为3
-                else if(*recvdata.Command&0b1000){
-                    run_flag=3;
+                    //BIT3为1，则CSP模式，runflag为3
+                else if (*recvdata.Command & 0b1000) {
+                    run_flag = 3;
                 }
-            } else{
+            } else {
                 run_flag = 0;
             }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"

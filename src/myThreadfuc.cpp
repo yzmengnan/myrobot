@@ -36,15 +36,15 @@ void mt::status_print(bool *flag, const int cycletime,ads myads) {
 
 void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, sd mysd) {
     int servo_on_mark=1;
-    int servo_off_mark=1;
-    int servo_csp_flag = 1;
+    int servo_off_mark=0;
+    int servo_csp_flag = 0;
     while(true){
         //runflag只要大于等于1，即允许使能
         if(runflag&&servo_on_mark){
             error_code = mysd.Servo_On(sdata,gdata);
             servo_on_mark=0;
             servo_off_mark=1;
-            servo_csp_flag = 1;
+            servo_csp_flag = 1;//使能开启后，才允许启动CSP，且CSP会关闭该标志位，直至重新使能才会使该标志置1
         }
         else if(runflag==0&&servo_off_mark){
             error_code = mysd.Servo_Off(sdata,gdata);
