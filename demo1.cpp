@@ -20,7 +20,6 @@ std::string filename = "./Data/guijidian.txt";
 auto main() -> int {
     sd myservo(myads);
     myThreadfuc mt;
-
     std::vector<DTS> sdata(Servo_number);
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> Joint(Servo_number);

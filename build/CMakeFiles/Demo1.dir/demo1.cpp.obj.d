@@ -378,6 +378,7 @@ CMakeFiles/Demo1.dir/demo1.cpp.obj: \
  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/ADS.h \
  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/Servo_DRIVE.h \
  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/myThreadfuc.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/TimerCounter.h \
  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/ReadTXT.hpp \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \

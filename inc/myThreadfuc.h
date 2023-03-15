@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2023 by YangQ, All Rights Reserved.
  */
- #pragma once
+#pragma once
 //#ifndef __MYTHREAD__
 //#define __MYTHREAD__
 
@@ -17,11 +17,11 @@
 #include "Data_Process.h"
 #include "Servo_DRIVE.h"
 #include <chrono>
+#include <cstring>
 #include <iostream>
 #include <mutex>
 #include <thread>
 #include <vector>
-#include "string.h"
 
 extern std::mutex th_mutex;
 extern std::atomic_int s_err;
@@ -34,11 +34,13 @@ using mt = class myThreadfuc {
 public:
     static void tc(int *flag, int breakout_value);
 
-    static void status_print(const bool *flag, int cycletime,ads myads);
+    static void status_print(const bool *flag, int cycletime, ads myads);
 
-    void DRIVE(std::atomic_int & runflag,std::vector<DTS>&sdata,std::vector<DFS>&gdata,Servo_Drive& mysd);
+    void DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, Servo_Drive &mysd);
+
+
 private:
-    int error_code =0;
+    int error_code = 0;
 };
 
 //#endif

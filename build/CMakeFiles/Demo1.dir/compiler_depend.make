@@ -380,7 +380,7 @@ CMakeFiles/Demo1.dir/demo1.cpp.obj: C:/Users/91418/OneDrive/Demo0/ClionProj/demo
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/ADS.h \
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/Servo_DRIVE.h \
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/myThreadfuc.h \
-  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/Servo_DRIVE.h \
+  C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/TimerCounter.h \
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/ReadTXT.hpp \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
@@ -1035,6 +1035,8 @@ C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string:
+
+C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring:
 
 C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream_insert.h:
 
