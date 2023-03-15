@@ -99,10 +99,11 @@ auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata, std::vector<DFS> &gdata) ->
 
 auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag) -> int {
     bool servo_state = true;
-    if (servo_operation_ready_flag == 0) {
+    if (pp_ready_flag == 0) {
         //设置PP工作模式
         for (auto &child_servo: sdata) {
             child_servo.Mode_of_Operation = 1;
+            child_servo.Max_Velocity=2500;
         }
         error_code = pmyads->set(sdata);
         if (error_code < 0) {
@@ -124,7 +125,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
         error_code = -3000;
         return error_code;
     } else
-        servo_operation_ready_flag = 1;
+        pp_ready_flag = 1;
     // PTP with CIOFF
     if (ciflag == CIOFF) {
         th_mutex.lock();
@@ -235,7 +236,6 @@ auto Servo_Drive::Servo_PTP_Joint_noSync(std::vector<float> Joint_theta, std::ve
 auto
 Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<DTS> &sdata, std::vector<DFS> &gdata,
                                     int rpm) -> int {
-    int error_code = 0;
     error_code = dp::j2s(std::move(Joint_theta), sdata);
     if (error_code < 0) {
         return error_code;
@@ -269,6 +269,7 @@ Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<
 }
 
 auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,const string&filename) -> int {
+    pp_ready_flag=0;
     TimerCounter tc;
     ReadTxT txt;
     std::vector<std::vector<std::string>> local_data, ans;
@@ -278,11 +279,10 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
         std::cout << "Read File Error!" << std::endl;
         return -1;
     }
-//    error_code = Servo_On(sdata, gdata);
     int i = 0;
     for (auto &child_servo: sdata) {
         child_servo.Mode_of_Operation = 8;
-        child_servo.Target_Pos =(std::int32_t) dp::t2p(stof(local_data[1][i]), i)*180/3.1415;
+        child_servo.Target_Pos =(std::int32_t) dp::t2p(stof(local_data[1][i])*180/3.1415926, i);
         child_servo.Max_Velocity = 2500;
         i++;
     }
@@ -298,15 +298,19 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
             } else {
                 std::cout << "Taget Position has sent!" << "Joint_Position:";
                 for (int i = 0; i < Servo_number; i++) {
-                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i]), i)*180/3.1415;
+                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i])*180/3.1415, i);
                     std::cout << stof(local_data[0][i]) << ",";
                 }
                 std::cout << std::endl;
+                th_mutex.lock();
                 error_code = pmyads->get(gdata);
+                th_mutex.unlock();
                 std::cout << "Max Velocity has verified!" << "Axis_speed with rpm:";
                 for (int i = 0; i < Servo_number; i++) {
+                    //速度修正
+                    //脉冲差除以8388608得到r/10ms *6000 得到rpm 再乘以跟踪误差比1/k（k>1)
                     sdata[i].Max_Velocity = int(
-                            double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos+pulse_offset[i]) * 0.0000006794929 * R_reductor[i]));
+                            double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929));
                     std::cout << sdata[i].Max_Velocity << ",";
                 }
                 std::cout << std::endl;
@@ -320,5 +324,10 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
             std::cout << "Time cycle:" << tc.dbTime * 1000 << std::endl;
         }
     }
+    this_thread::sleep_for(std::chrono::milliseconds(1000));
+    for(auto&child_servo:sdata){
+        child_servo.Mode_of_Operation=1;
+    }
+    error_code = pmyads->set(sdata);
     return 0;
 }

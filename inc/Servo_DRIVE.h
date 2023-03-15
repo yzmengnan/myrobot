@@ -60,7 +60,7 @@ public:
     auto Servo_CSP(std::vector<DTS> &sdata,std::vector<DFS>&gdata,const string&filename)->int;
 
 private:
-    int servo_operation_ready_flag=0; //=1表示pp就位，=0表示未就位，=2表示csp就位
+    int pp_ready_flag=0; //=1表示pp就位，=0表示未就位
     ads *pmyads = nullptr;
     int *const servo_time_lag_flag = new int(1);
     int csp_cycle_flag=1;

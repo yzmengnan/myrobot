@@ -25,8 +25,9 @@ auto main() -> int {
     std::vector<DTS> sdata(Servo_number);
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> Joint(Servo_number);
-
+//    myservo.Servo_On(sdata,gdata);
 //    s_err = myservo.Servo_CSP(sdata, gdata,filename);
+//    myservo.Servo_Off(sdata,gdata);
     Mysocket server;
     server.build_socket();
 
