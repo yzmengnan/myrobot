@@ -118,6 +118,10 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
                 if (*recvdata.Command &0b100){
                     run_flag=2;
                 }
+                //BIT3为1，则CSP模式，runflag为3
+                else if(*recvdata.Command&0b1000){
+                    run_flag=3;
+                }
             } else{
                 run_flag = 0;
             }

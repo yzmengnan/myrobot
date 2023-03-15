@@ -17,7 +17,7 @@ std::atomic_int run_flag(0);//0：无使能，1：使能，2：PP连续运动，
 std::mutex th_mutex;
 
 ads myads;
-
+std::string filename = "./Data/guijidian.txt";
 auto main() -> int {
     sd myservo(myads);
     myThreadfuc mt;
@@ -26,8 +26,7 @@ auto main() -> int {
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> Joint(Servo_number);
 
-//    s_err = myservo.Servo_CSP(sdata, gdata);
-
+//    s_err = myservo.Servo_CSP(sdata, gdata,filename);
     Mysocket server;
     server.build_socket();
 

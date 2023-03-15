@@ -18,6 +18,7 @@
 
 #define R_pulse_of_encoder 0x7fffff
 extern float R_reductor[];
+extern int pulse_offset[9];
 using dp = class Data_Process {
 public:
     /**

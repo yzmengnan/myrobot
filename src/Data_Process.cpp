@@ -12,13 +12,15 @@
 #include "Data_Process.h"
 
 float R_reductor[9]={285,213.7,153.9,146,144.9,33,0.5,20,0.5};
+int pulse_offset[9]={-513848,-331982,11630709,-382944720,-506320482,42662099,0,0,0};
+
 
 auto dp::p2t(INT32 pulse,int& i ) -> float {
-    return float(double(pulse) / R_pulse_of_encoder / R_reductor[i] * 360);
+    return float(double(pulse+pulse_offset[i]) / R_pulse_of_encoder / R_reductor[i] * 360);
 }
 
 auto dp::t2p(double theta,int& i) -> INT32 {
-    return (INT32) (theta / 360 * R_reductor[i] * R_pulse_of_encoder);
+    return (INT32) double((theta / 360 * R_reductor[i] * R_pulse_of_encoder))-pulse_offset[i];
 }
 
 auto dp::j2s(std::vector<float> Joint_theta, std::vector<DTS> &sdata) -> int {

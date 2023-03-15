@@ -21,11 +21,13 @@
 #include <mutex>
 #include <thread>
 #include <vector>
-
+#include "string.h"
 
 extern std::mutex th_mutex;
 extern std::atomic_int s_err;
 extern std::atomic_int run_flag;
+extern std::string filename;
+
 class Servo_Drive;
 
 using mt = class myThreadfuc {

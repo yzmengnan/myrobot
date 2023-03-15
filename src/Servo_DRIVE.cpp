@@ -168,7 +168,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
         // 如果是伺服均收到新的坐标位置，更新控制字，准备下一次位置更新
         if (!servo_state) {
             for (auto &child_servo: sdata) {
-                child_servo.Control_Word &= 0xff0f;
+                child_servo.Control_Word &= 0xffef;
             }
             th_mutex.lock();
             error_code = pmyads->set(sdata);
@@ -268,28 +268,28 @@ Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<
     return error_code;
 }
 
-auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> int {
+auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,const string&filename) -> int {
     TimerCounter tc;
     ReadTxT txt;
     std::vector<std::vector<std::string>> local_data, ans;
-    string path = "./Data/test_data.txt";
+    string path = filename;
     local_data = txt.read_from_file(ans, path);
     if (local_data.empty()) {
         std::cout << "Read File Error!" << std::endl;
         return -1;
     }
-    error_code = Servo_On(sdata, gdata);
+//    error_code = Servo_On(sdata, gdata);
     int i = 0;
     for (auto &child_servo: sdata) {
         child_servo.Mode_of_Operation = 8;
-        child_servo.Target_Pos = dp::t2p(stof(local_data[1][1 + i]), i);
+        child_servo.Target_Pos =(std::int32_t) dp::t2p(stof(local_data[1][i]), i)*180/3.1415;
         child_servo.Max_Velocity = 2500;
         i++;
     }
     error_code = pmyads->set(sdata);
     this_thread::sleep_for(chrono::milliseconds(2000));
     while (true) {
-        if (csp_mark) {
+        if (csp_cycle_flag) {
             tc.Start();
             local_data.erase(local_data.begin());//删除第一行
             if (local_data.empty()) {
@@ -298,25 +298,25 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata) ->
             } else {
                 std::cout << "Taget Position has sent!" << "Joint_Position:";
                 for (int i = 0; i < Servo_number; i++) {
-                    sdata[i].Target_Pos = dp::t2p(stof(local_data[0][i + 1]), i);
-                    std::cout << stof(local_data[0][i + 1]) << ",";
+                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i]), i)*180/3.1415;
+                    std::cout << stof(local_data[0][i]) << ",";
                 }
                 std::cout << std::endl;
                 error_code = pmyads->get(gdata);
                 std::cout << "Max Velocity has verified!" << "Axis_speed with rpm:";
                 for (int i = 0; i < Servo_number; i++) {
                     sdata[i].Max_Velocity = int(
-                            double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.0000006794929 * R_reductor[i]));
+                            double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos+pulse_offset[i]) * 0.0000006794929 * R_reductor[i]));
                     std::cout << sdata[i].Max_Velocity << ",";
                 }
                 std::cout << std::endl;
                 error_code = pmyads->set(sdata);
-                csp_mark = 0;
+                csp_cycle_flag = 0;
             }
         }
         tc.Stop();
         if (tc.dbTime * 1000 > 10) {
-            csp_mark = 1;
+            csp_cycle_flag = 1;
             std::cout << "Time cycle:" << tc.dbTime * 1000 << std::endl;
         }
     }

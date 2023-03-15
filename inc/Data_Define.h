@@ -15,7 +15,7 @@
 
 #define DTS_SIZE 20
 #define DFS_SIZE 12
-#define Servo_number 9
+#define Servo_number 2
 using DTS = struct Data_To_Servo {
     UINT16 Control_Word = 0;
     INT32 Target_Pos = 0;
