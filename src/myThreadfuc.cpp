@@ -39,6 +39,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
     int servo_off_mark = 0;
     int servo_csp_flag = 0;
     while (true) {
+        cout<<"Drive Working!"<<endl;
         //runflag只要大于等于1，即允许使能
         if (runflag && servo_on_mark) {
             error_code = myservo.Servo_On(sdata, gdata);
@@ -62,7 +63,8 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
             error_code = myservo.Servo_CSP(sdata, gdata, filename);
             servo_csp_flag = 0;
         }
-        if (error_code <= 0) {
+        if (error_code <0) {
+            cout<<"Drive Break out! Error:"<<error_code<<endl;
             break;
         }
     }
