@@ -9,8 +9,7 @@
  * Copyright (c) 2023 by YangQ, All Rights Reserved.
  */
 
-#ifndef __SERVO_DRIVE__
-#define __SERVO_DRIVE__
+#pragma once
 
 #include "ADS.h"
 #include "Data_Define.h"
@@ -34,10 +33,9 @@ extern std::mutex th_mutex;
 using sd = class Servo_Drive {
 public:
     Servo_Drive(ads &myads);
-
     auto Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> int;
 
-    auto Servo_Off(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> int;
+    auto Servo_Off(std::vector<DTS> &sdata) -> int;
 
     /**
      * @description: PP运动驱动程序
@@ -68,5 +66,3 @@ private:
     int csp_cycle_flag=1;
     int error_code = 0;
 };
-
-#endif

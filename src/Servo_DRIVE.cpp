@@ -20,7 +20,6 @@ auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> 
         error_code = pmyads->get(gdata);
         if (error_code < 0)
             return error_code;
-
         for (DFS child_servo: gdata) {
             state = ((child_servo.Status_Word &= 0x40) == 0x40); // 状态字按位与0x40后等于0x40 表示，此时伺服处于初始化完成状态
         }
@@ -33,6 +32,9 @@ auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> 
         }
 
         error_code = pmyads->set(sdata);
+        if(error_code<0){
+            return error_code;
+        }
         Sleep(10);
         error_code = pmyads->get(gdata);
         if (error_code)
@@ -48,6 +50,9 @@ auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> 
             child_servo.Control_Word = 0x0007;
         }
         error_code = pmyads->set(sdata);
+        if(error_code<0){
+            return error_code;
+        }
         Sleep(10);
         error_code = pmyads->get(gdata);
         if (error_code)
@@ -64,6 +69,9 @@ auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> 
         }
         error_code = pmyads->set(sdata);
         Sleep(100);
+        if(error_code<0){
+            return error_code;
+        }
         error_code = pmyads->get(gdata);
         if (error_code)
             return error_code;
@@ -83,7 +91,7 @@ auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> 
     return error_code;
 }
 
-auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> int {
+auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata) -> int {
     for (auto &child_servo: sdata) {
         child_servo.Control_Word = 0;
     }
@@ -307,6 +315,9 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                 th_mutex.lock();
                 error_code = pmyads->get(gdata);
                 th_mutex.unlock();
+                if(error_code<0){
+                    return error_code;
+                }
                 std::cout << "Max Velocity has verified!" << "Axis_speed with rpm:";
                 for (int i = 0; i < Servo_number; i++) {
                     //速度修正
@@ -334,5 +345,5 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
     }
     data_record(Data_receive_buffer);
     error_code = pmyads->set(sdata);
-    return 0;
+    return error_code;
 }

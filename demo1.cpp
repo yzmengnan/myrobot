@@ -39,7 +39,7 @@ auto main() -> int {
     socket_send.detach();
 
     //下位机驱动线程，根据指令执行
-    std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), myservo);
+    std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), std::ref(myservo));
     drive.detach();
 
     //主线程堵塞，遇错退出
@@ -50,6 +50,6 @@ auto main() -> int {
             break;
         }
     }
-    myservo.Servo_Off(sdata, gdata);
+    myservo.Servo_Off(sdata);
     return 0;
 }
