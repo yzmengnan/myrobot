@@ -1,13 +1,12 @@
 
+#include "Mysocket.h"
 #include <iostream>
 #include <mutex>
 #include <thread>
 #include <vector>
-#include "string.h"
+
 // MYdemo headers
-#include "Mysocket.h"
 #include "ADS.h"
-#include "ReadTXT.hpp"
 #include "Servo_DRIVE.h"
 #include "TimerCounter.h"
 
@@ -27,7 +26,7 @@ auto main() -> int {
     std::vector<float> Joint(Servo_number);
     Mysocket server;
     server.build_socket();
-//    bool *s_t_flag = new bool(true);
+    //    bool *s_t_flag = new bool(true);
     // std::thread s_t(mt::status_print, s_t_flag, 10);
     // s_t.detach();
 

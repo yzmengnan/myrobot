@@ -10,7 +10,7 @@ include_directories(inc)
 
 #aux_source_directory(src DIR_SRCS)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-
+set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 add_library(comlib STATIC SRC/Ads_Com.cpp)
 add_library(driverlib STATIC SRC/Servo_DRIVE.cpp)

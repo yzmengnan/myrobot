@@ -1,2 +1,0 @@
-C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ar.exe qc C:\Users\LR\OneDrive\Demo0\ClionProj\lib\libtimecountlib.a CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj
-C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ranlib.exe C:\Users\LR\OneDrive\Demo0\ClionProj\lib\libtimecountlib.a

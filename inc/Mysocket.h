@@ -17,11 +17,11 @@
 #define WIN32_LEAN_AND_MEAN
 
 // #include "conio.h"
+#include <winsock2.h>
 #include <array>
 #include <iostream>
 #include <mutex>
 #include <vector>
-#include <winsock2.h>
 #include "windows.h"
 #include <ws2tcpip.h>
 #include <thread>

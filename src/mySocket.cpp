@@ -108,7 +108,6 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             recvdata.Cartesian_Velocity_set = (float *) &recvbuf.front() + recvdata.Cartesian_Velocity_set_location;
             recvdata.Tail_check = (int *) &recvbuf.front() + recvdata.Tail_check_location;
             std::vector<float> jointdata(recvdata.Joint_Position_set, recvdata.Joint_Position_set + Servo_number);
-
             if (*recvdata.Command & 0b10) //BIT1为1，则上使能
             {
                 run_flag = 1;

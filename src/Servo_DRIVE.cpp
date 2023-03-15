@@ -314,7 +314,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                     sdata[i].Max_Velocity = int(
                             double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929));
 //                    std::cout << sdata[i].Max_Velocity << ",";
-                    std::cout << gdata[i].Actual_Vec << ",";
+//                    std::cout << gdata[i].Actual_Vec << ",";
                 }
                 std::cout << std::endl;
                 error_code = pmyads->set(sdata);
