@@ -269,6 +269,8 @@ Servo_Drive::Servo_PTP_Joint_isSync(std::vector<float> Joint_theta, std::vector<
 }
 
 auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,const string&filename) -> int {
+
+    vector<vector<DFS>> Data_receive_buffer;
     pp_ready_flag=0;
     TimerCounter tc;
     ReadTxT txt;
@@ -312,10 +314,12 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                     sdata[i].Max_Velocity = int(
                             double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929));
 //                    std::cout << sdata[i].Max_Velocity << ",";
+                    std::cout << gdata[i].Actual_Vec << ",";
                 }
                 std::cout << std::endl;
                 error_code = pmyads->set(sdata);
                 csp_cycle_flag = 0;
+                Data_receive_buffer.push_back(gdata);
             }
         }
         tc.Stop();
@@ -328,6 +332,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
     for(auto&child_servo:sdata){
         child_servo.Mode_of_Operation=1;
     }
+    data_record(Data_receive_buffer);
     error_code = pmyads->set(sdata);
     return 0;
 }

@@ -112,6 +112,7 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             if (*recvdata.Command & 0b10) //BIT1为1，则上使能
             {
                 run_flag = 1;
+                //Bit2为1，表示PP运动，仅在此状态下，更新sdata以满足PP需要
                 if (*recvdata.Command & 0b100) {
                     run_flag = 2;
                     th_mutex.lock();
