@@ -24,6 +24,8 @@
 #include <vector>
 #include "TimerCounter.h"
 #include "ReadTXT.hpp"
+#include "data_record.h"
+
 #define CION "change_immediately On"
 #define CIOFF "change_immediately Off"
 

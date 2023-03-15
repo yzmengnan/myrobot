@@ -29,7 +29,7 @@ using DFS = struct Data_From_Servo {
     UINT16 Status_Word = 0;
     INT8 Mode_of_Operation_disp = 0;
     INT32 Actual_Pos = 0;
-    INT32 null = 0;
+    INT32 Actual_Vec = 0;
 };
 using pDFS = DFS *;
 
