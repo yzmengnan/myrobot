@@ -49,9 +49,9 @@ public:
 
     auto build_socket() -> int;
 
-    void mysocket_send( ads &myads);
+    void mysocket_send( ads &myads_local);
 
-    void mysocket_recv(std::vector<DTS> &sdata);
+    [[maybe_unused]] void mysocket_recv(std::vector<DTS> &sdata);
 
     void mysocket_recv2(std::vector<DTS> &sdata);
 

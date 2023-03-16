@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/LIB/libdatarecordlib.a"
-  "/LIB/libdatarecordlib.pdb"
+  "/lib/libdatarecordlib.a"
+  "/lib/libdatarecordlib.pdb"
   "CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj"
   "CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj.d"
 )

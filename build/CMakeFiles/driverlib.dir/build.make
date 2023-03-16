@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj
+CMAKE_SOURCE_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj\build
+CMAKE_BINARY_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/driverlib.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/driverlib.dir/flags.make
 
 CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj: CMakeFiles/driverlib.dir/flags.make
 CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj: CMakeFiles/driverlib.dir/includes_CXX.rsp
-CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj: C:/Users/91418/OneDrive/Demo0/ClionProj/src/Servo_DRIVE.cpp
+CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj: C:/Users/LR/OneDrive/Demo0/ClionProj/src/Servo_DRIVE.cpp
 CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj: CMakeFiles/driverlib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj -MF CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.obj.d -o CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.obj -c C:\Users\91418\OneDrive\Demo0\ClionProj\src\Servo_DRIVE.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj -MF CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.obj.d -o CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.obj -c C:\Users\LR\OneDrive\Demo0\ClionProj\src\Servo_DRIVE.cpp
 
 CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\91418\OneDrive\Demo0\ClionProj\src\Servo_DRIVE.cpp > CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LR\OneDrive\Demo0\ClionProj\src\Servo_DRIVE.cpp > CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.i
 
 CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\91418\OneDrive\Demo0\ClionProj\src\Servo_DRIVE.cpp -o CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LR\OneDrive\Demo0\ClionProj\src\Servo_DRIVE.cpp -o CMakeFiles\driverlib.dir\src\Servo_DRIVE.cpp.s
 
 # Object files for target driverlib
 driverlib_OBJECTS = \
@@ -90,15 +90,15 @@ driverlib_OBJECTS = \
 # External object files for target driverlib
 driverlib_EXTERNAL_OBJECTS =
 
-/LIB/libdriverlib.a: CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj
-/LIB/libdriverlib.a: CMakeFiles/driverlib.dir/build.make
-/LIB/libdriverlib.a: CMakeFiles/driverlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \LIB\libdriverlib.a"
+/lib/libdriverlib.a: CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj
+/lib/libdriverlib.a: CMakeFiles/driverlib.dir/build.make
+/lib/libdriverlib.a: CMakeFiles/driverlib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \lib\libdriverlib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\driverlib.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\driverlib.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/driverlib.dir/build: /LIB/libdriverlib.a
+CMakeFiles/driverlib.dir/build: /lib/libdriverlib.a
 .PHONY : CMakeFiles/driverlib.dir/build
 
 CMakeFiles/driverlib.dir/clean:
@@ -106,6 +106,6 @@ CMakeFiles/driverlib.dir/clean:
 .PHONY : CMakeFiles/driverlib.dir/clean
 
 CMakeFiles/driverlib.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles\driverlib.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles\driverlib.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/driverlib.dir/depend
 

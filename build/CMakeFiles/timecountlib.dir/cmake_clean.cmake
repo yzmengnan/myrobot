@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/LIB/libtimecountlib.a"
-  "/LIB/libtimecountlib.pdb"
+  "/lib/libtimecountlib.a"
+  "/lib/libtimecountlib.pdb"
   "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj"
   "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj.d"
 )

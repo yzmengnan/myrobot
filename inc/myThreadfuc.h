@@ -34,9 +34,9 @@ using mt = class myThreadfuc {
 public:
     static void tc(int *flag, int breakout_value);
 
-    static void status_print(const bool *flag, int cycletime, ads myads);
+    [[maybe_unused]] static void status_print(const bool *flag, int cycletime, ads myads);
 
-    void DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, Servo_Drive &mysd);
+    void DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::vector<DFS> &gdata, Servo_Drive& mysd);
 
 
 private:

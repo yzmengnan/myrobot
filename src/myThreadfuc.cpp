@@ -16,7 +16,7 @@ void mt::tc(int *flag, int breakout_value) {
     *flag = 0;
 }
 
-void mt::status_print(const bool *flag, int cycletime, ads myads) {
+[[maybe_unused]] void mt::status_print(const bool *flag, int cycletime, ads myads) {
     std::vector<DFS> gdata(Servo_number);
     while (s_err >= 0 && flag) {
         std::this_thread::sleep_for(std::chrono::milliseconds(cycletime));
@@ -39,7 +39,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
     int servo_off_mark = 0;
     int servo_csp_flag = 0;
     while (true) {
-        cout<<"Drive Working!"<<endl;
+        //        cout<<"Drive Working!"<<endl;
         //runflag只要大于等于1，即允许使能
         if (runflag && servo_on_mark) {
             error_code = myservo.Servo_On(sdata, gdata);
@@ -55,18 +55,18 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
         else if (runflag == 2) {
             error_code = myservo.Servo_PTP_Basic_isSync(sdata, gdata, CIOFF, 1);
             std::cout << "DRIVE MODE:" << runflag << std::endl;
-            //            std::cout<<"Target_position:"<<sdata[0].Target_Pos<<","<<sdata[1].Target_Pos<<std::endl;
-            //            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+//            std::cout << "Target_position:" << sdata[0].Target_Pos << "," << sdata[1].Target_Pos << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
         } else if (runflag == 3 && servo_csp_flag) {
             std::cout << "DRIVE MODE:" << runflag << std::endl;
             std::cout << "START CSP PROGRAM" << std::endl;
             error_code = myservo.Servo_CSP(sdata, gdata, filename);
             servo_csp_flag = 0;
         }
-        if (error_code <0) {
-            cout<<"Drive Break out! Error:"<<error_code<<endl;
+        if (error_code < 0) {
+            cout << "Drive Break out! Error:" << error_code << endl;
+            s_err = error_code;
             break;
         }
     }
 }
-

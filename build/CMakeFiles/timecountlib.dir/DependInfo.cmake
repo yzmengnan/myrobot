@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/src/TimerCounter.cpp" "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj" "gcc" "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj.d"
+  "C:/Users/LR/OneDrive/Demo0/ClionProj/src/TimerCounter.cpp" "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj" "gcc" "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj.d"
   )
 
 # Targets to which this target links.

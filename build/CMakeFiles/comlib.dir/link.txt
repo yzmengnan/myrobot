@@ -1,2 +1,2 @@
-C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc \LIB\libcomlib.a CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj
-C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ranlib.exe \LIB\libcomlib.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ar.exe qc \lib\libcomlib.a CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ranlib.exe \lib\libcomlib.a

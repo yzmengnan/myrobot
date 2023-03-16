@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "/LIB/libdplib.a"
+  "/lib/libdplib.a"
 )

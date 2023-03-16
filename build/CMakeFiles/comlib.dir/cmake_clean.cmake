@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/LIB/libcomlib.a"
-  "/LIB/libcomlib.pdb"
+  "/lib/libcomlib.a"
+  "/lib/libcomlib.pdb"
   "CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj"
   "CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj.d"
 )

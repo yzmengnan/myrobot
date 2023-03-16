@@ -7,14 +7,14 @@ auto Mysocket::build_socket() -> int {
     auto ClientSocket = INVALID_SOCKET;
 
     struct addrinfo *result = nullptr;
-    struct addrinfo hints;
-    int iResult;
-    int iSendResult;
+    struct addrinfo hints{};
+    int iResult_local;
+    [[maybe_unused]] int iSendResult;
 
     // Initialize Winsock
-    iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
-    if (iResult != 0) {
-        printf("WSAStartup failed with error: %d\n", iResult);
+    iResult_local = WSAStartup(MAKEWORD(2, 2), &wsaData);
+    if (iResult_local != 0) {
+        printf("WSAStartup failed with error: %d\n", iResult_local);
         return 1;
     }
 
@@ -25,9 +25,9 @@ auto Mysocket::build_socket() -> int {
     hints.ai_flags = AI_PASSIVE;
 
     // Resolve the server address and port
-    iResult = getaddrinfo(nullptr, DEFAULT_PORT, &hints, &result);
-    if (iResult != 0) {
-        printf("getaddrinfo failed with error: %d\n", iResult);
+    iResult_local = getaddrinfo(nullptr, DEFAULT_PORT, &hints, &result);
+    if (iResult_local != 0) {
+        printf("getaddrinfo failed with error: %d\n", iResult_local);
         WSACleanup();
         return 1;
     }
@@ -42,8 +42,8 @@ auto Mysocket::build_socket() -> int {
     }
 
     //  Set up the TCP listening socket
-    iResult = bind(ListenSocket, result->ai_addr, (int) result->ai_addrlen);
-    if (iResult == SOCKET_ERROR) {
+    iResult_local = bind(ListenSocket, result->ai_addr, (int) result->ai_addrlen);
+    if (iResult_local == SOCKET_ERROR) {
         printf("bind failed with error: %d\n", WSAGetLastError());
         freeaddrinfo(result);
         closesocket(ListenSocket);
@@ -53,8 +53,8 @@ auto Mysocket::build_socket() -> int {
 
     freeaddrinfo(result);
     std::cout << "start listening!" << std::endl;
-    iResult = listen(ListenSocket, SOMAXCONN);
-    if (iResult == SOCKET_ERROR) {
+    iResult_local = listen(ListenSocket, SOMAXCONN);
+    if (iResult_local == SOCKET_ERROR) {
         printf("listen failed with error: %d\n", WSAGetLastError());
         closesocket(ListenSocket);
         WSACleanup();
@@ -76,9 +76,9 @@ auto Mysocket::build_socket() -> int {
     return 0;
 }
 
-void Mysocket::mysocket_recv(std::vector<DTS> &sdata) {
+[[maybe_unused]] void Mysocket::mysocket_recv(std::vector<DTS> &sdata) {
     while (iResult > 0) {
-        std::array<char, DEFAULT_BUFLEN> recvbuf;
+        std::array<char, DEFAULT_BUFLEN> recvbuf{};
         iResult = recv(mysocket, &recvbuf.front(), DEFAULT_BUFLEN, 0);
         if (iResult > 0) {
             auto temp = (float *) &recvbuf.front();
@@ -96,7 +96,7 @@ void Mysocket::mysocket_recv(std::vector<DTS> &sdata) {
 }
 
 void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
-    std::array<char, DEFAULT_BUFLEN> recvbuf;
+    std::array<char, DEFAULT_BUFLEN> recvbuf{};
     while (iResult > 0) {
         iResult = recv(mysocket, &recvbuf.front(), DEFAULT_BUFLEN, 0);
         if (iResult > 0) {
@@ -126,10 +126,10 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
                 run_flag = 0;
             }
             std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
-                      << recvdata.Command[0] << ",Joint_Position_set:";
-            for (int i = 0; i < Servo_number; i++) {
-                std::cout << recvdata.Joint_Position_set[i] << ",";
-            }
+                      << recvdata.Command[0];
+//            for (int i = 0; i < Servo_number; i++) {
+//                std::cout << recvdata.Joint_Position_set[i] << ",";
+//            }
             std::cout << std::endl;
         }
     }
@@ -138,19 +138,18 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
 }
 
 //待修改，需要完善服务器数据报文
-void Mysocket::mysocket_send(ads &myads) {
+void Mysocket::mysocket_send(ads &myads_local) {
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> temp(Servo_number);
     std::vector<uint8_t *> senddata(gdata.size());
     while (iResult > 0) {
-        myads.get(gdata);
+        myads_local.get(gdata);
         temp = dp::sreal_2j(gdata);
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
         iResult = send(mysocket, (char *) senddata.front(), 4 * Servo_number, 0);
-
     }
     iResult = -1;
 }

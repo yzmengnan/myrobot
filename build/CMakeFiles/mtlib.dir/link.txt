@@ -1,2 +1,2 @@
-C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc \LIB\libmtlib.a CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj
-C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ranlib.exe \LIB\libmtlib.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ar.exe qc \lib\libmtlib.a CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ranlib.exe \lib\libmtlib.a

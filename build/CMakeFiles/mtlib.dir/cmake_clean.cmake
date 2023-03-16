@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/LIB/libmtlib.a"
-  "/LIB/libmtlib.pdb"
+  "/lib/libmtlib.a"
+  "/lib/libmtlib.pdb"
   "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj"
   "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj.d"
 )

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/LIB/libDemo1.dll.a"
+  "/lib/libDemo1.dll.a"
   "CMakeFiles/Demo1.dir/demo1.cpp.obj"
   "CMakeFiles/Demo1.dir/demo1.cpp.obj.d"
   "Demo1.exe"

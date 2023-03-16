@@ -92,6 +92,7 @@ auto Servo_Drive::Servo_On(std::vector<DTS> &sdata, std::vector<DFS> &gdata) -> 
 }
 
 auto Servo_Drive::Servo_Off(std::vector<DTS> &sdata) -> int {
+    pp_ready_flag=0;
     for (auto &child_servo: sdata) {
         child_servo.Control_Word = 0;
     }
@@ -154,25 +155,26 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
         }
         //重置标志位指针
         *servo_time_lag_flag = 1;
-        std::thread th1(mt::tc, servo_time_lag_flag, 20);
+        std::thread th1(mt::tc, servo_time_lag_flag, 30);
         th1.detach();
         while (servo_state && *servo_time_lag_flag) {
-            int servo_get_number = 0;
+            int servo_target_acknowledge = 0;
             // 获取伺服状态字
             th_mutex.lock();
             error_code = pmyads->get(gdata);
             th_mutex.unlock();
-            if (error_code < 0) {
+            if(error_code){
                 return error_code;
             }
             for (auto child_servo: gdata) {
                 if (child_servo.Status_Word & 0x1000)
-                    servo_get_number++;
+                    servo_target_acknowledge++;
             }
-            if (servo_get_number == Servo_number) {
+            if (servo_target_acknowledge == Servo_number) {
                 servo_state = false;
-            } else
-                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            }
+//            else
+//                std::this_thread::sleep_for(std::chrono::milliseconds(1));
         }
         // 如果是伺服均收到新的坐标位置，更新控制字，准备下一次位置更新
         if (!servo_state) {
@@ -191,7 +193,6 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
             return error_code;
         }
     }
-
         // 轨迹点连续，用于连续点动
     else if (ciflag == CION) {
         std::cout << "ptp_continue" << std::endl;

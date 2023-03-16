@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/91418/OneDrive/Demo0/ClionProj/src/myThreadfuc.cpp" "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj" "gcc" "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj.d"
+  "C:/Users/LR/OneDrive/Demo0/ClionProj/src/myThreadfuc.cpp" "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj" "gcc" "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj.d"
   )
 
 # Targets to which this target links.
