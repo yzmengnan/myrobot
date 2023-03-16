@@ -41,7 +41,7 @@ extern std::atomic_int run_flag;
 class Mysocket {
 public:
     Rrecv recvdata;
-    [[maybe_unused]] Ssend server2c_data;
+    [[maybe_unused]] Ssend server_to_client_data;
 
     Mysocket() = default;
 
@@ -56,7 +56,7 @@ public:
     void mysocket_recv2(std::vector<DTS> &sdata);
 
 private:
-    SOCKET mysocket;
+    SOCKET mysocket{};
 };
 
 #endif
