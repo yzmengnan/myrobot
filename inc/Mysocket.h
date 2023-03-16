@@ -9,8 +9,8 @@
  * Copyright (c) 2023 by YangQ, All Rights Reserved.
  */
 
-#ifndef __MYSOCKET__
-#define __MYSOCKET__
+#ifndef MYSOCKET_
+#define MYSOCKET_
 // #pragma ONCE
 #undef UNICODE
 
