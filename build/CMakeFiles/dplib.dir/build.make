@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj
+CMAKE_SOURCE_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj\build
+CMAKE_BINARY_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dplib.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/dplib.dir/flags.make
 
 CMakeFiles/dplib.dir/src/Data_Process.cpp.obj: CMakeFiles/dplib.dir/flags.make
 CMakeFiles/dplib.dir/src/Data_Process.cpp.obj: CMakeFiles/dplib.dir/includes_CXX.rsp
-CMakeFiles/dplib.dir/src/Data_Process.cpp.obj: C:/Users/LR/OneDrive/Demo0/ClionProj/src/Data_Process.cpp
+CMakeFiles/dplib.dir/src/Data_Process.cpp.obj: C:/Users/91418/OneDrive/Demo0/ClionProj/src/Data_Process.cpp
 CMakeFiles/dplib.dir/src/Data_Process.cpp.obj: CMakeFiles/dplib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dplib.dir/src/Data_Process.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dplib.dir/src/Data_Process.cpp.obj -MF CMakeFiles\dplib.dir\src\Data_Process.cpp.obj.d -o CMakeFiles\dplib.dir\src\Data_Process.cpp.obj -c C:\Users\LR\OneDrive\Demo0\ClionProj\src\Data_Process.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dplib.dir/src/Data_Process.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dplib.dir/src/Data_Process.cpp.obj -MF CMakeFiles\dplib.dir\src\Data_Process.cpp.obj.d -o CMakeFiles\dplib.dir\src\Data_Process.cpp.obj -c C:\Users\91418\OneDrive\Demo0\ClionProj\src\Data_Process.cpp
 
 CMakeFiles/dplib.dir/src/Data_Process.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dplib.dir/src/Data_Process.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LR\OneDrive\Demo0\ClionProj\src\Data_Process.cpp > CMakeFiles\dplib.dir\src\Data_Process.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\91418\OneDrive\Demo0\ClionProj\src\Data_Process.cpp > CMakeFiles\dplib.dir\src\Data_Process.cpp.i
 
 CMakeFiles/dplib.dir/src/Data_Process.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dplib.dir/src/Data_Process.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LR\OneDrive\Demo0\ClionProj\src\Data_Process.cpp -o CMakeFiles\dplib.dir\src\Data_Process.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\91418\OneDrive\Demo0\ClionProj\src\Data_Process.cpp -o CMakeFiles\dplib.dir\src\Data_Process.cpp.s
 
 # Object files for target dplib
 dplib_OBJECTS = \
@@ -90,15 +90,15 @@ dplib_OBJECTS = \
 # External object files for target dplib
 dplib_EXTERNAL_OBJECTS =
 
-/lib/libdplib.a: CMakeFiles/dplib.dir/src/Data_Process.cpp.obj
-/lib/libdplib.a: CMakeFiles/dplib.dir/build.make
-/lib/libdplib.a: CMakeFiles/dplib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \lib\libdplib.a"
+/LIB/libdplib.a: CMakeFiles/dplib.dir/src/Data_Process.cpp.obj
+/LIB/libdplib.a: CMakeFiles/dplib.dir/build.make
+/LIB/libdplib.a: CMakeFiles/dplib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \LIB\libdplib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\dplib.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\dplib.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/dplib.dir/build: /lib/libdplib.a
+CMakeFiles/dplib.dir/build: /LIB/libdplib.a
 .PHONY : CMakeFiles/dplib.dir/build
 
 CMakeFiles/dplib.dir/clean:
@@ -106,6 +106,6 @@ CMakeFiles/dplib.dir/clean:
 .PHONY : CMakeFiles/dplib.dir/clean
 
 CMakeFiles/dplib.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles\dplib.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles\dplib.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dplib.dir/depend
 

@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj
+CMAKE_SOURCE_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj\build
+CMAKE_BINARY_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/datarecordlib.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/datarecordlib.dir/flags.make
 
 CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj: CMakeFiles/datarecordlib.dir/flags.make
 CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj: CMakeFiles/datarecordlib.dir/includes_CXX.rsp
-CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj: C:/Users/LR/OneDrive/Demo0/ClionProj/src/data_record.cpp
+CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj: C:/Users/91418/OneDrive/Demo0/ClionProj/src/data_record.cpp
 CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj: CMakeFiles/datarecordlib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj -MF CMakeFiles\datarecordlib.dir\src\data_record.cpp.obj.d -o CMakeFiles\datarecordlib.dir\src\data_record.cpp.obj -c C:\Users\LR\OneDrive\Demo0\ClionProj\src\data_record.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj -MF CMakeFiles\datarecordlib.dir\src\data_record.cpp.obj.d -o CMakeFiles\datarecordlib.dir\src\data_record.cpp.obj -c C:\Users\91418\OneDrive\Demo0\ClionProj\src\data_record.cpp
 
 CMakeFiles/datarecordlib.dir/src/data_record.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/datarecordlib.dir/src/data_record.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LR\OneDrive\Demo0\ClionProj\src\data_record.cpp > CMakeFiles\datarecordlib.dir\src\data_record.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\91418\OneDrive\Demo0\ClionProj\src\data_record.cpp > CMakeFiles\datarecordlib.dir\src\data_record.cpp.i
 
 CMakeFiles/datarecordlib.dir/src/data_record.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/datarecordlib.dir/src/data_record.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LR\OneDrive\Demo0\ClionProj\src\data_record.cpp -o CMakeFiles\datarecordlib.dir\src\data_record.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\91418\OneDrive\Demo0\ClionProj\src\data_record.cpp -o CMakeFiles\datarecordlib.dir\src\data_record.cpp.s
 
 # Object files for target datarecordlib
 datarecordlib_OBJECTS = \
@@ -90,15 +90,15 @@ datarecordlib_OBJECTS = \
 # External object files for target datarecordlib
 datarecordlib_EXTERNAL_OBJECTS =
 
-/lib/libdatarecordlib.a: CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj
-/lib/libdatarecordlib.a: CMakeFiles/datarecordlib.dir/build.make
-/lib/libdatarecordlib.a: CMakeFiles/datarecordlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \lib\libdatarecordlib.a"
+/LIB/libdatarecordlib.a: CMakeFiles/datarecordlib.dir/src/data_record.cpp.obj
+/LIB/libdatarecordlib.a: CMakeFiles/datarecordlib.dir/build.make
+/LIB/libdatarecordlib.a: CMakeFiles/datarecordlib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \LIB\libdatarecordlib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\datarecordlib.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\datarecordlib.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/datarecordlib.dir/build: /lib/libdatarecordlib.a
+CMakeFiles/datarecordlib.dir/build: /LIB/libdatarecordlib.a
 .PHONY : CMakeFiles/datarecordlib.dir/build
 
 CMakeFiles/datarecordlib.dir/clean:
@@ -106,6 +106,6 @@ CMakeFiles/datarecordlib.dir/clean:
 .PHONY : CMakeFiles/datarecordlib.dir/clean
 
 CMakeFiles/datarecordlib.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles\datarecordlib.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles\datarecordlib.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/datarecordlib.dir/depend
 

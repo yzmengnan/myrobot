@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/lib/libdplib.a"
-  "/lib/libdplib.pdb"
+  "/LIB/libdplib.a"
+  "/LIB/libdplib.pdb"
   "CMakeFiles/dplib.dir/src/Data_Process.cpp.obj"
   "CMakeFiles/dplib.dir/src/Data_Process.cpp.obj.d"
 )

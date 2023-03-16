@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/lib/libdriverlib.a"
-  "/lib/libdriverlib.pdb"
+  "/LIB/libdriverlib.a"
+  "/LIB/libdriverlib.pdb"
   "CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj"
   "CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj.d"
 )

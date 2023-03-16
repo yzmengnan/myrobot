@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "/lib/libdriverlib.a"
+  "/LIB/libdriverlib.a"
 )

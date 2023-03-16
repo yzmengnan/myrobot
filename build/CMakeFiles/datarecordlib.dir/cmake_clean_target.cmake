@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "/lib/libdatarecordlib.a"
+  "/LIB/libdatarecordlib.a"
 )

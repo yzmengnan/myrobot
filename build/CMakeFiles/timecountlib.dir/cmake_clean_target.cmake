@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "/lib/libtimecountlib.a"
+  "/LIB/libtimecountlib.a"
 )

@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "/lib/libsocketlib.a"
+  "/LIB/libsocketlib.a"
 )

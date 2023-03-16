@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj
+CMAKE_SOURCE_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\LR\OneDrive\Demo0\ClionProj\build
+CMAKE_BINARY_DIR = C:\Users\91418\OneDrive\Demo0\ClionProj\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/socketlib.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/socketlib.dir/flags.make
 
 CMakeFiles/socketlib.dir/src/mySocket.cpp.obj: CMakeFiles/socketlib.dir/flags.make
 CMakeFiles/socketlib.dir/src/mySocket.cpp.obj: CMakeFiles/socketlib.dir/includes_CXX.rsp
-CMakeFiles/socketlib.dir/src/mySocket.cpp.obj: C:/Users/LR/OneDrive/Demo0/ClionProj/src/mySocket.cpp
+CMakeFiles/socketlib.dir/src/mySocket.cpp.obj: C:/Users/91418/OneDrive/Demo0/ClionProj/src/mySocket.cpp
 CMakeFiles/socketlib.dir/src/mySocket.cpp.obj: CMakeFiles/socketlib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/socketlib.dir/src/mySocket.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/socketlib.dir/src/mySocket.cpp.obj -MF CMakeFiles\socketlib.dir\src\mySocket.cpp.obj.d -o CMakeFiles\socketlib.dir\src\mySocket.cpp.obj -c C:\Users\LR\OneDrive\Demo0\ClionProj\src\mySocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/socketlib.dir/src/mySocket.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/socketlib.dir/src/mySocket.cpp.obj -MF CMakeFiles\socketlib.dir\src\mySocket.cpp.obj.d -o CMakeFiles\socketlib.dir\src\mySocket.cpp.obj -c C:\Users\91418\OneDrive\Demo0\ClionProj\src\mySocket.cpp
 
 CMakeFiles/socketlib.dir/src/mySocket.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/socketlib.dir/src/mySocket.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LR\OneDrive\Demo0\ClionProj\src\mySocket.cpp > CMakeFiles\socketlib.dir\src\mySocket.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\91418\OneDrive\Demo0\ClionProj\src\mySocket.cpp > CMakeFiles\socketlib.dir\src\mySocket.cpp.i
 
 CMakeFiles/socketlib.dir/src/mySocket.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/socketlib.dir/src/mySocket.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\LR\OneDrive\Demo0\ClionProj\src\mySocket.cpp -o CMakeFiles\socketlib.dir\src\mySocket.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\91418\OneDrive\Demo0\ClionProj\src\mySocket.cpp -o CMakeFiles\socketlib.dir\src\mySocket.cpp.s
 
 # Object files for target socketlib
 socketlib_OBJECTS = \
@@ -90,15 +90,15 @@ socketlib_OBJECTS = \
 # External object files for target socketlib
 socketlib_EXTERNAL_OBJECTS =
 
-/lib/libsocketlib.a: CMakeFiles/socketlib.dir/src/mySocket.cpp.obj
-/lib/libsocketlib.a: CMakeFiles/socketlib.dir/build.make
-/lib/libsocketlib.a: CMakeFiles/socketlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \lib\libsocketlib.a"
+/LIB/libsocketlib.a: CMakeFiles/socketlib.dir/src/mySocket.cpp.obj
+/LIB/libsocketlib.a: CMakeFiles/socketlib.dir/build.make
+/LIB/libsocketlib.a: CMakeFiles/socketlib.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library \LIB\libsocketlib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\socketlib.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\socketlib.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/socketlib.dir/build: /lib/libsocketlib.a
+CMakeFiles/socketlib.dir/build: /LIB/libsocketlib.a
 .PHONY : CMakeFiles/socketlib.dir/build
 
 CMakeFiles/socketlib.dir/clean:
@@ -106,6 +106,6 @@ CMakeFiles/socketlib.dir/clean:
 .PHONY : CMakeFiles/socketlib.dir/clean
 
 CMakeFiles/socketlib.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build C:\Users\LR\OneDrive\Demo0\ClionProj\build\CMakeFiles\socketlib.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build C:\Users\91418\OneDrive\Demo0\ClionProj\build\CMakeFiles\socketlib.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/socketlib.dir/depend
 
