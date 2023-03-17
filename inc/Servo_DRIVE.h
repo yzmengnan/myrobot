@@ -44,7 +44,7 @@ public:
      */
     auto Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag) -> int;
 
-    auto Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag, int rpm) -> int;
+    auto Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag, float rpm) -> int;
 
     /**
      * @description: 关节空间角PTP
