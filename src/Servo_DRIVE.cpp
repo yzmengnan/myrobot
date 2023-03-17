@@ -204,7 +204,7 @@ auto Servo_Drive::Servo_PTP_Basic(std::vector<DTS> &sdata, std::vector<DFS> &gda
 }
 
 auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DFS> &gdata, std::string &&ciflag,
-                                         int rpm) -> int {
+                                         float rpm) -> int {
     error_code = pmyads->get(gdata);
     if (error_code < 0)
         return error_code;
@@ -218,9 +218,9 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
         child_rate = child_rate / max_delta_p;
     }
     //rpm 是关节转速
-    for (int i = 0; i < sdata.size(); i++) {
-        sdata[i].Profile_Velocity = dp::t2p(rate[i] * rpm / 6.0 * 360, i);
-    }
+    for (int i = 0; i < sdata.size(); i++)
+        sdata[i].Profile_Velocity = dp::t2p(rate[i] * rpm / 6 * 360, i);
+
     error_code = pmyads->set(sdata);
     if (error_code < 0)
         return error_code;
@@ -334,6 +334,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                 Data_receive_buffer.push_back(gdata);
             }
         }
+        std::cout<<gdata[0].Following_error<<std::endl;
         tc.Stop();
         if (tc.dbTime * 1000 > 10) {
             csp_cycle_flag = 1;
