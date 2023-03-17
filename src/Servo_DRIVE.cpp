@@ -335,6 +335,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                 Data_receive_buffer.push_back(gdata);
             }
         }
+        std::cout<<gdata[0].Following_error<<std::endl;
         tc.Stop();
         if (tc.dbTime * 1000 > 10) {
             csp_cycle_flag = 1;
