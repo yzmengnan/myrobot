@@ -14,7 +14,7 @@
 #include <cstdint>
 
 #define DTS_SIZE 20
-#define DFS_SIZE 12
+#define DFS_SIZE 16
 #define Servo_number 2
 using DTS = struct Data_To_Servo {
     UINT16 Control_Word = 0;
@@ -30,6 +30,7 @@ using DFS = struct Data_From_Servo {
     INT8 Mode_of_Operation_disp = 0;
     INT32 Actual_Pos = 0;
     INT32 Actual_Vec = 0;
+    INT32 Following_error=0;
 };
 using pDFS = DFS *;
 

@@ -57,7 +57,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
             std::cout << "DRIVE MODE:" << runflag << std::endl;
 //            std::cout << "Target_position:" << sdata[0].Target_Pos << "," << sdata[1].Target_Pos << std::endl;
             //检查是否因为此处延时导致PP lag现象
-            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            std::this_thread::sleep_for(std::chrono::milliseconds(50));
         } else if (runflag == 3 && servo_csp_flag) {
             std::cout << "DRIVE MODE:" << runflag << std::endl;
             std::cout << "START CSP PROGRAM" << std::endl;
