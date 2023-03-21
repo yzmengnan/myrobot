@@ -14,6 +14,9 @@
 #include "ADS.h"
 #include "Data_Define.h"
 #include "Data_Process.h"
+#include "Data_Record.h"
+#include "ReadTXT.hpp"
+#include "TimerCounter.h"
 #include "myThreadfuc.h"
 #include <chrono>
 #include <iostream>
@@ -21,9 +24,6 @@
 #include <synchapi.h>
 #include <thread>
 #include <vector>
-#include "TimerCounter.h"
-#include "ReadTXT.hpp"
-#include "data_record.h"
 
 #define CION "change_immediately On"
 #define CIOFF "change_immediately Off"
