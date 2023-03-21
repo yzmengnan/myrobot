@@ -212,16 +212,21 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
     std::vector<float> rate;
     rate.reserve(Servo_number);
     for (int i = 0; i < gdata.size(); i++) {
-        rate.push_back(dp::p2t(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos), i));
+        rate.push_back(abs(dp::p2t(gdata[i].Actual_Pos - sdata[i].Target_Pos-pulse_offset[i], i)));
+//        std::cout<<"rate"<<i<<":"<<rate[i]<<",";
     }
+    std::cout<<std::endl;
     float max_delta_p = *std::max_element(rate.begin(), rate.end());
     for (auto &child_rate: rate) {
         child_rate = child_rate / max_delta_p;
     }
     //rpm 是关节转速
-    for (int i = 0; i < sdata.size(); i++)
-        sdata[i].Profile_Velocity = dp::t2p(rate[i] * rpm / 6 * 360, i);
-
+    for (int i = 0; i < sdata.size(); i++){
+        sdata[i].Profile_Velocity = dp::t2p(rate[i] * rpm*6.0, i);
+//        std::cout<<"Joint_set_velocity:"<<i<<" "<<sdata[i].Profile_Velocity/8388607.0*60<<",";
+//        std::cout<<"Joint_set_radio:"<<i<<" "<<rate[i]<<",";
+    }
+    std::cout<<std::endl;
     error_code = pmyads->set(sdata);
     if (error_code < 0)
         return error_code;
@@ -294,7 +299,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
     int i = 0;
     for (auto &child_servo: sdata) {
         child_servo.Mode_of_Operation = 8;
-        child_servo.Target_Pos =(std::int32_t) dp::t2p(stof(local_data[1][i])*180/3.1415926, i);
+        child_servo.Target_Pos =(std::int32_t) dp::t2p(stof(local_data[1][i]), i);
         child_servo.Max_Velocity = 2500;
         i++;
     }
@@ -310,7 +315,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
             } else {
                 std::cout << "Target Position has sent!" << "Joint_Position:";
                 for (int i = 0; i < Servo_number; i++) {
-                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i])*180/3.1415, i);
+                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i]), i);
                     std::cout << stof(local_data[0][i]) << ",";
                 }
                 std::cout << std::endl;
@@ -326,8 +331,8 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                     //脉冲差除以8388608得到r/10ms *6000 得到rpm 再乘以跟踪误差比1/k（k>1)
                     sdata[i].Max_Velocity = int(
                             double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929));
-//                    std::cout << sdata[i].Max_Velocity << ",";
-//                    std::cout << gdata[i].Actual_Vec << ",";
+                    std::cout << sdata[i].Max_Velocity << ",";
+                    std::cout << gdata[i].Actual_Vec << ",";
                 }
                 std::cout << std::endl;
                 error_code = pmyads->set(sdata);
@@ -335,7 +340,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                 Data_receive_buffer.push_back(gdata);
             }
         }
-        std::cout<<gdata[0].Following_error<<std::endl;
+//        std::cout<<gdata[0].Following_error<<std::endl;
         tc.Stop();
         if (tc.dbTime * 1000 > 10) {
             csp_cycle_flag = 1;
