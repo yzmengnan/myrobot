@@ -126,12 +126,12 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
             } else {
                 run_flag = 0;
             }
-            std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
-                      << recvdata.Command[0];
+//            std::cout << "Receive Socket data:" << "Head_Check:" << recvdata.Head_check[0] << ",Command:"
+//                      << recvdata.Command[0];
 //            for (int i = 0; i < Servo_number; i++) {
 //                std::cout << recvdata.Joint_Position_set[i] << ",";
 //            }
-            std::cout << std::endl;
+//            std::cout << std::endl;
         }
     }
     std::cout << "Socket Communication Error:" << iResult << std::endl;
