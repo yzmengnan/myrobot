@@ -12,7 +12,7 @@ void data_record(vector<vector<DFS>> &data) {
             temp+=std::to_string(child.Actual_Vec/8388608.0*60);
             temp+=",";
         }
-        outfile<<temp<<std::endl;
+        outfile<<"No."<<i<<temp<<std::endl;
 //        outfile << "NO." << i << " " << double(data[i][0].Actual_Vec / 8388608.0 * 60) << ',' << double(data[i][1].Actual_Vec / 8388608.0 * 60)<< ','
 //                << double(data[i][2].Actual_Vec / 8388608.0 * 60) << ','<< double(data[i][3].Actual_Vec / 8388608.0 * 60)<< ','
 //                << double(data[i][4].Actual_Vec / 8388608.0 * 60)<< ',' << double(data[i][5].Actual_Vec / 8388608.0 * 60)<< ','
