@@ -1,0 +1,2 @@
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc \LIB\libdatarecordlib.a CMakeFiles/datarecordlib.dir/src/Data_Record.cpp.obj
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ranlib.exe \LIB\libdatarecordlib.a
