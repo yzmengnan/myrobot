@@ -12,7 +12,7 @@ add_library(dplib STATIC SRC/Data_Process.cpp)
 add_library(mtlib STATIC SRC/myThreadfuc.cpp)
 add_library(socketlib STATIC SRC/mySocket.cpp)
 add_library(timecountlib STATIC SRC/TimerCounter.cpp)
-add_library(datarecordlib STATIC src/data_record.cpp)
+add_library(datarecordlib STATIC src/Data_Record.cpp)
 
 project(Demo1)
 
