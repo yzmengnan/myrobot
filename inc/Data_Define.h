@@ -15,7 +15,7 @@
 
 #define DTS_SIZE 20
 #define DFS_SIZE 16
-#define Servo_number 2
+#define Servo_number 6
 using DTS = struct Data_To_Servo {
     UINT16 Control_Word = 0;
     INT32 Target_Pos = 0;
@@ -35,13 +35,13 @@ using DFS = struct Data_From_Servo {
 using pDFS = DFS *;
 
 using Rrecv = struct Recv_from_Client {
-    int *Head_check;//int32
-    int *Command;//int32
-    float *Joint_Position_set;//float
-    float *Cartesian_Position;//float
-    float *Joint_Velocity_set; //Joint Velocity theta per sec
-    float *Cartesian_Velocity_set;//float
-    int *Tail_check;//int32
+    int *Head_check{};//int32
+    int *Command{};//int32
+    float *Joint_Position_set{};//float
+    float *Cartesian_Position{};//float
+    float *Joint_Velocity_set{}; //Joint Velocity theta per sec
+    float *Cartesian_Velocity_set{};//float
+    int *Tail_check{};//int32
 
     const int Head_check_location = 0;
     const int Command_location = 1;
@@ -54,13 +54,13 @@ using Rrecv = struct Recv_from_Client {
 };
 
 using Ssend = struct Send_to_Client {
-    int *Head_check;
-    int *Status;
-    float *Joint_Position;
-    float *Cartesian_Position;
-    float *Joint_Velocity;
-    float *Cartesian_Velocity;
-    int *Tail_check;
+    int *Head_check{};
+    int *Status{};
+    float *Joint_Position{};
+    float *Cartesian_Position{};
+    float *Joint_Velocity{};
+    float *Cartesian_Velocity{};
+    int *Tail_check{};
 
     const int Head_check_location = 0;
     const int Status_location = 1;
