@@ -16,7 +16,7 @@ std::atomic_int run_flag(0);//0：无使能，1：使能，2：PP连续运动，
 std::mutex th_mutex;
 
 ads myads;
-std::string filename = "./Data/guijidian.txt";
+std::string filename = "./Data/pathdata_0320.txt";
 auto main() -> int {
     sd myservo(myads);
     myThreadfuc mt;
