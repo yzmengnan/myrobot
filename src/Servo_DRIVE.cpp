@@ -315,8 +315,8 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
             } else {
                 std::cout << "Target Position has sent!" << "Joint_Position:";
                 for (int i = 0; i < Servo_number; i++) {
-                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i]), i);
-                    std::cout << stof(local_data[0][i]) << ",";
+                    sdata[i].Target_Pos =(std::int32_t) dp::t2p(stof(local_data[0][i+3]), i);
+                    std::cout << stof(local_data[0][i+3]) << ",";
                 }
                 std::cout << std::endl;
                 th_mutex.lock();
@@ -325,16 +325,16 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                 if(error_code<0){
                     return error_code;
                 }
-                std::cout << "Max Velocity has verified!" << "Axis_speed with rpm:";
+//                std::cout << "Max Velocity has verified!" << "Axis_speed with rpm:";
                 for (int i = 0; i < Servo_number; i++) {
                     //速度修正
                     //脉冲差除以8388608得到r/10ms *6000 得到rpm 再乘以跟踪误差比1/k（k>1)
                     sdata[i].Max_Velocity = int(
                             double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929));
-                    std::cout << sdata[i].Max_Velocity << ",";
-                    std::cout << gdata[i].Actual_Vec << ",";
+//                    std::cout << sdata[i].Max_Velocity << ",";
+//                    std::cout << gdata[i].Actual_Vec << ",";
                 }
-                std::cout << std::endl;
+//                std::cout << std::endl;
                 error_code = pmyads->set(sdata);
                 csp_cycle_flag = 0;
                 Data_receive_buffer.push_back(gdata);
@@ -360,3 +360,4 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
     error_code = pmyads->set(sdata);
     return error_code;
 }
+
