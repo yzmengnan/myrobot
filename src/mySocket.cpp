@@ -135,7 +135,7 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
         }
     }
     std::cout << "Socket Communication Error:" << iResult << std::endl;
-    s_err = iResult;
+    s_err =-1;
 }
 
 //待修改，需要完善服务器数据报文
@@ -149,7 +149,7 @@ void Mysocket::mysocket_send(ads &myads_local) {
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         iResult = send(mysocket, (char *) senddata.front(), 4 * Servo_number, 0);
     }
     iResult = -1;
