@@ -215,7 +215,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
         rate.push_back(abs(dp::p2t(gdata[i].Actual_Pos - sdata[i].Target_Pos-pulse_offset[i], i)));
 //        std::cout<<"rate"<<i<<":"<<rate[i]<<",";
     }
-    std::cout<<std::endl;
+//    std::cout<<std::endl;
     float max_delta_p = *std::max_element(rate.begin(), rate.end());
     for (auto &child_rate: rate) {
         child_rate = child_rate / max_delta_p;
@@ -226,7 +226,7 @@ auto Servo_Drive::Servo_PTP_Basic_isSync(std::vector<DTS> &sdata, std::vector<DF
 //        std::cout<<"Joint_set_velocity:"<<i<<" "<<sdata[i].Profile_Velocity/8388607.0*60<<",";
 //        std::cout<<"Joint_set_radio:"<<i<<" "<<rate[i]<<",";
     }
-    std::cout<<std::endl;
+//    std::cout<<std::endl;
     error_code = pmyads->set(sdata);
     if (error_code < 0)
         return error_code;

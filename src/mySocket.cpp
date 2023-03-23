@@ -149,7 +149,7 @@ void Mysocket::mysocket_send(ads &myads_local) {
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::this_thread::sleep_for(std::chrono::milliseconds(2));
         iResult = send(mysocket, (char *) senddata.front(), 4 * Servo_number, 0);
     }
     iResult = -1;
