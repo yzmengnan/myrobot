@@ -135,7 +135,7 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
         }
     }
     std::cout << "Socket Communication Error:" << iResult << std::endl;
-    s_err = iResult;
+    s_err = -1;
 }
 
 //待修改，需要完善服务器数据报文
