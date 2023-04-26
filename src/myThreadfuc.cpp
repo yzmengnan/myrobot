@@ -53,7 +53,7 @@ void myThreadfuc::DRIVE(std::atomic_int &runflag, std::vector<DTS> &sdata, std::
         }
         // runflag==2 ，启动pp运行模式
         else if (runflag == 2) {
-            error_code = myservo.Servo_PTP_Basic_isSync(sdata, gdata, CIOFF, 1);
+            error_code = myservo.Servo_PTP_Basic_isSync(sdata, gdata, CIOFF, 2);
             std::cout << "DRIVE MODE:" << runflag << std::endl;
 //            std::cout << "Target_position:" << sdata[0].Target_Pos << "," << sdata[1].Target_Pos << std::endl;
             //检查是否因为此处延时导致PP lag现象

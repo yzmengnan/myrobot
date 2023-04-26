@@ -1,0 +1,1 @@
+ /lib/libcomlib.a /lib/libdriverlib.a /lib/libdplib.a /lib/libmtlib.a /lib/libsocketlib.a /lib/libtimecountlib.a /lib/libdatarecordlib.a -lws2_32 /lib/libmotion.a C:/Users/91418/OneDrive/Demo0/ClionProj/lib/TcAdsDll.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

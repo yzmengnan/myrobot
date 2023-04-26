@@ -1,0 +1,10 @@
+^C:\USERS\91418\ONEDRIVE\DEMO0\CLIONPROJ\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\JetBrains\CLion 2023.1.1\bin\cmake\win\x64\bin\cmake.exe" -SC:/Users/91418/OneDrive/Demo0/ClionProj -BC:/Users/91418/OneDrive/Demo0/ClionProj/build --check-stamp-file C:/Users/91418/OneDrive/Demo0/ClionProj/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

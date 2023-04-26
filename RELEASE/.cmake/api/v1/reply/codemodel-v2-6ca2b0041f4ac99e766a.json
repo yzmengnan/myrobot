@@ -1,0 +1,132 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Demo1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Demo1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Demo1-Release-ed2e075a0e1674370cbe.json",
+					"name" : "Demo1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "comlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-comlib-Release-6752643f24c9e46c1ee9.json",
+					"name" : "comlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "datarecordlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-datarecordlib-Release-6218814d971b7518b4ad.json",
+					"name" : "datarecordlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dplib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dplib-Release-3e5139f4986ebe75248a.json",
+					"name" : "dplib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "driverlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-driverlib-Release-419659da3b33c171312f.json",
+					"name" : "driverlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "motion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-motion-Release-a6aa438f0ff318583fab.json",
+					"name" : "motion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mtlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mtlib-Release-7504b63d75b775a17b0e.json",
+					"name" : "mtlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "socketlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-socketlib-Release-ce7ff8264e850f2c053d.json",
+					"name" : "socketlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timecountlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timecountlib-Release-84cdde08e6726c10bb0c.json",
+					"name" : "timecountlib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE",
+		"source" : "C:/Users/91418/OneDrive/Demo0/ClionProj"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

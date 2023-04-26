@@ -6,7 +6,7 @@
 #include "Data_Process.h"
 void data_record(vector<vector<DFS>> &data) {
     ofstream outfile,outfile2,outfile3;
-    outfile.open("./Data/data_record_mul_v.txt", ios::out | ios::trunc);
+    outfile.open("./Data/data_record_0328_mul_v_2.txt", ios::out | ios::trunc);
     for (int i = 0; i < data.size(); i++) {
         string temp;
         for(auto child:data[i]){
@@ -22,7 +22,7 @@ void data_record(vector<vector<DFS>> &data) {
 //                << endl;
     }
     outfile.close();
-    outfile2.open("./Data/data_record_mul_p.txt", ios::out | ios::trunc);
+    outfile2.open("./Data/data_record_0328_mul_p_2.txt", ios::out | ios::trunc);
     for(int i =0;i<data.size();i++){
         string temp;
         for(int j =0;j<Servo_number;j++){
@@ -33,7 +33,7 @@ void data_record(vector<vector<DFS>> &data) {
     }
     outfile2.close();
 
-    outfile3.open("./Data/data_record_mul_t.txt", ios::out | ios::trunc);
+    outfile3.open("./Data/data_record_0328_mul_t_2.txt", ios::out | ios::trunc);
     for(int i =0;i<data.size();i++){
         string temp;
         for(int j =0;j<Servo_number;j++){

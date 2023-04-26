@@ -1,0 +1,56 @@
+[
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/comlib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\comlib.dir\\src\\Ads_Com.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\Ads_Com.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/Ads_Com.cpp",
+  "output": "CMakeFiles/comlib.dir/src/Ads_Com.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/driverlib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\driverlib.dir\\src\\Servo_DRIVE.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\Servo_DRIVE.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/Servo_DRIVE.cpp",
+  "output": "CMakeFiles/driverlib.dir/src/Servo_DRIVE.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/dplib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\dplib.dir\\src\\Data_Process.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\Data_Process.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/Data_Process.cpp",
+  "output": "CMakeFiles/dplib.dir/src/Data_Process.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/mtlib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\mtlib.dir\\src\\myThreadfuc.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\myThreadfuc.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/myThreadfuc.cpp",
+  "output": "CMakeFiles/mtlib.dir/src/myThreadfuc.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/socketlib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\socketlib.dir\\src\\mySocket.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\mySocket.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/mySocket.cpp",
+  "output": "CMakeFiles/socketlib.dir/src/mySocket.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/timecountlib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\timecountlib.dir\\src\\TimerCounter.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\TimerCounter.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/TimerCounter.cpp",
+  "output": "CMakeFiles/timecountlib.dir/src/TimerCounter.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/datarecordlib.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\datarecordlib.dir\\src\\Data_Record.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\Data_Record.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/Data_Record.cpp",
+  "output": "CMakeFiles/datarecordlib.dir/src/Data_Record.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/motion.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\motion.dir\\src\\motion.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\src\\motion.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/src/motion.cpp",
+  "output": "CMakeFiles/motion.dir/src/motion.cpp.obj"
+},
+{
+  "directory": "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/Demo1.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\Demo1.dir\\demo1.cpp.obj -c C:\\Users\\91418\\OneDrive\\Demo0\\ClionProj\\demo1.cpp",
+  "file": "C:/Users/91418/OneDrive/Demo0/ClionProj/demo1.cpp",
+  "output": "CMakeFiles/Demo1.dir/demo1.cpp.obj"
+}
+]

@@ -7,13 +7,20 @@
 
 #include "vector"
 #include <iostream>
+
 using namespace std;
+
 class MOTION {
 public:
     MOTION();
-    ~MOTION();
-    static vector<float> joint2position(vector<float>& joint_data);
-    static vector<float> position2joint(vector<float>& position_data);
+
+    ~MOTION() = default;
+
+    static vector<float> joint2position(vector<float> &joint_data);
+
+    static vector<float> position2joint(vector<float> &position_data);
+
+    static vector<vector<float>> matrix_multiple(vector<vector<float>> &a, vector<vector<float>> &b);
 };
 
 

@@ -9,15 +9,20 @@
 #include "ADS.h"
 #include "Servo_DRIVE.h"
 #include "TimerCounter.h"
+#include "MOTION.h"
 
 // Gloabl varible
 std::atomic_int s_err(1);
 std::atomic_int run_flag(0);//0：无使能，1：使能，2：PP连续运动，3：CSP运动
 std::mutex th_mutex;
 
+void test();
+
 ads myads;
-std::string filename = "./Data/pathdata_0327_mul.txt";
+std::string filename = "./Data/pathdata_0327_origin.txt";
+
 auto main() -> int {
+    test();
     sd myservo(myads);
     myThreadfuc mt;
     std::vector<DTS> sdata(Servo_number);
@@ -38,7 +43,8 @@ auto main() -> int {
     socket_send.detach();
 
     //下位机驱动线程，根据指令执行
-    std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata), std::ref(myservo));
+    std::thread drive(&myThreadfuc::DRIVE, &mt, std::ref(run_flag), std::ref(sdata), std::ref(gdata),
+                      std::ref(myservo));
     drive.detach();
 
     //主线程堵塞，遇错退出
@@ -51,4 +57,21 @@ auto main() -> int {
     }
     myservo.Servo_Off(sdata);
     return 0;
+}
+
+void test() {
+    std::vector<std::vector<float>> a ={{2,1,0},{1,1,1},{0,0,0}};
+    std::vector<std::vector<float>> b ={{2,1,0},{1,1,1},{0,0,0}};
+    std::vector<float> position = {1.497, 0.08026, 0, 0, 0, 0};
+    std::vector<float>res = MOTION::position2joint(position);
+    std::vector<std::vector<float>> res2 = MOTION::matrix_multiple(a,b);
+    for(auto &child :res)
+        std::cout<<child<<",";
+    std::cout<<std::endl;
+    for(auto &i:res2){
+        for(auto &j:i)
+            std::cout<<j<<",";
+        std::cout<<std::endl;
+    }
+    std::cout<<std::endl;
 }

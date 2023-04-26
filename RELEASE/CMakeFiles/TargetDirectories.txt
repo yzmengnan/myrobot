@@ -1,0 +1,11 @@
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/comlib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/driverlib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/dplib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/mtlib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/socketlib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/timecountlib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/datarecordlib.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/motion.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/Demo1.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/edit_cache.dir
+C:/Users/91418/OneDrive/Demo0/ClionProj/RELEASE/CMakeFiles/rebuild_cache.dir

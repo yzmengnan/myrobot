@@ -1,0 +1,132 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Demo1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Demo1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Demo1-Debug-5698d1fba502a645681b.json",
+					"name" : "Demo1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "comlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-comlib-Debug-27ed786bff959ffb632c.json",
+					"name" : "comlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "datarecordlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-datarecordlib-Debug-3728a1f98fe770aa00ad.json",
+					"name" : "datarecordlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dplib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dplib-Debug-5ee82b1423aacc42d218.json",
+					"name" : "dplib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "driverlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-driverlib-Debug-4201eb710a455a4f8f46.json",
+					"name" : "driverlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "motion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-motion-Debug-c376d79dc98677176f31.json",
+					"name" : "motion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mtlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mtlib-Debug-fbd6c2e5e2a8d5f20b37.json",
+					"name" : "mtlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "socketlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-socketlib-Debug-3ad38b7f5e345832fd06.json",
+					"name" : "socketlib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timecountlib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timecountlib-Debug-1b41dddb589c9882bd8e.json",
+					"name" : "timecountlib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/91418/OneDrive/Demo0/ClionProj/build",
+		"source" : "C:/Users/91418/OneDrive/Demo0/ClionProj"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

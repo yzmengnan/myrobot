@@ -13,6 +13,7 @@ add_library(mtlib STATIC SRC/myThreadfuc.cpp)
 add_library(socketlib STATIC SRC/mySocket.cpp)
 add_library(timecountlib STATIC SRC/TimerCounter.cpp)
 add_library(datarecordlib STATIC src/Data_Record.cpp)
+add_library(motion  STATIC src/motion.cpp)
 
 project(Demo1)
 
@@ -20,4 +21,5 @@ add_executable(Demo1 demo1.cpp)
 
 target_link_libraries(Demo1 comlib driverlib dplib mtlib socketlib timecountlib datarecordlib)
 target_link_libraries(Demo1 ws2_32)
+target_link_libraries(Demo1 motion)
 target_link_libraries(Demo1 ${PROJECT_SOURCE_DIR}/lib/TcAdsDll.lib)
