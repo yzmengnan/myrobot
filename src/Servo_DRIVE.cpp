@@ -8,6 +8,7 @@
  *
  * Copyright (c) 2023 by YangQ, All Rights Reserved.
  */
+#include <algorithm>
 #include "Servo_DRIVE.h"
 
 Servo_Drive::Servo_Drive(ads &myads) {
@@ -330,7 +331,7 @@ auto Servo_Drive::Servo_CSP(std::vector<DTS> &sdata, std::vector<DFS> &gdata,con
                     //速度修正
                     //脉冲差除以8388608得到r/10ms *6000 得到rpm 再乘以跟踪误差比1/k（k>1)
                     sdata[i].Max_Velocity = int(
-                            double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929*4));
+                            double(abs(gdata[i].Actual_Pos - sdata[i].Target_Pos) * 0.00006794929*1));
                     std::cout << sdata[i].Max_Velocity << ",";
                     std::cout << gdata[i].Actual_Vec /8388608*60<< ",";
                 }
