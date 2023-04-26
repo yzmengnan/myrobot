@@ -21,25 +21,58 @@ vector<float> MOTION::position2joint(vector<float> &position_data) {
     const auto gama = (float) atan2(position_data[1], position_data[0]);
     const auto gama2 = (float) atan2(-d4 * cos(joint_data[2]) - d2, cos(joint_data[1]) * d4 * sin(joint_data[2]));
     joint_data[0] = gama - gama2;
-
+    float c1 = cos(joint_data[0]), c2 = cos(joint_data[1]), c3 = cos(joint_data[2]), s1 = sin(joint_data[0]), s2 = sin(
+            joint_data[1]), s3 = sin(joint_data[2]);
+    vector<vector<float>> R03 = {{c1 * c2 * c3 - s1 * s3, -c3 * s1 - c1 * c2 * s3, -c1 * s2},
+                                 {c2 * s3 + c2 * c3 * s1, c1 * c3 - c2 * s1 * s3,  -s1 * s2},
+                                 {c3 * s2,                -s2 * s3,                c2}};
+    vector<vector<float>> Rz_alpha = {{cos(position_data[3]), -sin(position_data[3]), 0},
+                                      {sin(position_data[3]), cos(position_data[3]),  0},
+                                      {0,                     0,                      1}};
+    vector<vector<float>> Ry_beta = {{cos(position_data[4]),  0, sin(position_data[4])},
+                                     {0,                      1, 0},
+                                     {-sin(position_data[4]), 0, cos(position_data[4])}};
+    vector<vector<float>> Rx_gama = {{1, 0,                     0},
+                                     {0, cos(position_data[5]), -sin(position_data[5])},
+                                     {0, sin(position_data[5]), cos(position_data[5])}};
+    vector<vector<float>> res = MOTION::matrix_multiple(Rz_alpha, Ry_beta);
+    res = MOTION::matrix_multiple(res, Rx_gama);
+    MOTION::matrix_transform(R03);
+    vector<vector<float>> R36 = MOTION::matrix_multiple(R03, res);
+    joint_data[4] = acos(-R36[1][2]);
+    joint_data[5] = asin(R36[1][1] / sin(joint_data[4]));
+    joint_data[3] = asin(-R36[2][2] / sin(joint_data[4]));
     return joint_data;
 }
 
 vector<vector<float>> MOTION::matrix_multiple(vector<vector<float>> &a, vector<vector<float>> &b) {
 //check
     if (a[0].size() != b.size())
-        return vector<vector<float>> (0);
-   int row = a.size(),col = b[0].size();
-   vector<float> zer(col,0);
-   vector<vector<float>> res(row,zer);
-   for(int i =0;i<row;++i){
-       for(int  j=0;j<col;++j){
-           float temp=0;
-           for(int k=0;k<col;++k){
-               temp+=a[i][k]*b[k][j];
-           }
-           res[i][j]=temp;
-       }
-   }
+        return vector<vector<float>>(0);
+    int row = a.size(), col = b[0].size();
+    vector<float> zer(col, 0);
+    vector<vector<float>> res(row, zer);
+    for (int i = 0; i < row; ++i) {
+        for (int j = 0; j < col; ++j) {
+            float temp = 0;
+            for (int k = 0; k < col; ++k) {
+                temp += a[i][k] * b[k][j];
+            }
+            res[i][j] = temp;
+        }
+    }
     return res;
+}
+
+void MOTION::matrix_transform(vector<vector<float>> &a) {
+
+    vector<float> row_zeros(a[0].size(), 0);
+    vector<float> col_zeros(a.size(), 0);
+    vector<vector<float>> res(row_zeros.size(), col_zeros);
+    for (int i = 0; i < row_zeros.size(); ++i) {
+        for (int j = 0; j < col_zeros.size(); ++j) {
+            res[i][j] = a[j][i];
+        }
+    }
+    a = res;
 }

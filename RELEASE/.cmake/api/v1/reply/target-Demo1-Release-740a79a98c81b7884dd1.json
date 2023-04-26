@@ -106,14 +106,6 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "driverlib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "dplib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "mtlib::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -127,6 +119,14 @@
 		{
 			"backtrace" : 2,
 			"id" : "datarecordlib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "driverlib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "dplib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 4,

@@ -30,7 +30,7 @@ auto main() -> int {
     std::vector<float> Joint(Servo_number);
     Mysocket server;
     server.build_socket();
-    //    bool *s_t_flag = new bool(true);
+    // bool *s_t_flag = new bool(true);
     // std::thread s_t(mt::status_print, s_t_flag, 10);
     // s_t.detach();
 
@@ -60,14 +60,20 @@ auto main() -> int {
 }
 
 void test() {
-    std::vector<std::vector<float>> a ={{2,1,0},{1,1,1},{0,0,0}};
+    std::vector<std::vector<float>> a ={{2,1,0},{1,1,1},{3,0,5}};
     std::vector<std::vector<float>> b ={{2,1,0},{1,1,1},{0,0,0}};
     std::vector<float> position = {1.497, 0.08026, 0, 0, 0, 0};
     std::vector<float>res = MOTION::position2joint(position);
     std::vector<std::vector<float>> res2 = MOTION::matrix_multiple(a,b);
+    MOTION::matrix_transform(a);
     for(auto &child :res)
         std::cout<<child<<",";
     std::cout<<std::endl;
+    for(auto &i:a){
+        for(auto &j:i)
+            std::cout<<j<<",";
+        std::cout<<std::endl;
+    }
     for(auto &i:res2){
         for(auto &j:i)
             std::cout<<j<<",";

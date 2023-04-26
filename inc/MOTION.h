@@ -21,6 +21,7 @@ public:
     static vector<float> position2joint(vector<float> &position_data);
 
     static vector<vector<float>> matrix_multiple(vector<vector<float>> &a, vector<vector<float>> &b);
+    static void matrix_transform(vector<vector<float>>& a);
 };
 
 
