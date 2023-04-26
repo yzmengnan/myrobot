@@ -392,7 +392,22 @@ CMakeFiles/Demo1.dir/demo1.cpp.obj: C:/Users/91418/OneDrive/Demo0/ClionProj/demo
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/myThreadfuc.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
   C:/Users/91418/OneDrive/Demo0/ClionProj/inc/TimerCounter.h \
-  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/MOTION.h
+  C:/Users/91418/OneDrive/Demo0/ClionProj/inc/MOTION.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/math.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/specfun.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/gamma.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/special_function_util.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/bessel_function.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/beta_function.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/ell_integral.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/exp_integral.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/hypergeometric.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/legendre_function.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/modified_bessel_func.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/poly_hermite.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/poly_laguerre.tcc \
+  C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/riemann_zeta.tcc
 
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/ia32intrin.h:
@@ -528,6 +543,8 @@ C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/serializeintrin.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/rtmintrin.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/math.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/sal.h:
 
@@ -690,6 +707,8 @@ C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/winuser.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512cdintrin.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/beta_function.tcc:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/avx512vlintrin.h:
 
@@ -857,6 +876,8 @@ C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/securitybaseapi.h:
 
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/poly_laguerre.tcc:
+
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/synchapi.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/ws2tcpip.h:
@@ -916,6 +937,8 @@ C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/x86_64-w64-mingw32/include/psdk_inc/_wsa_errnos.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/poly_hermite.tcc:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/array:
 
@@ -1164,3 +1187,25 @@ C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Users/91418/OneDrive/Demo0/ClionProj/inc/TimerCounter.h:
 
 C:/Users/91418/OneDrive/Demo0/ClionProj/inc/MOTION.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cmath:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/specfun.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/gamma.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/special_function_util.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/bessel_function.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/exp_integral.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/ell_integral.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/hypergeometric.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/legendre_function.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/modified_bessel_func.tcc:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/riemann_zeta.tcc:

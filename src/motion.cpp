@@ -9,7 +9,41 @@ MOTION::MOTION() {
 }
 
 vector<float> MOTION::joint2position(vector<float> &joint_data) {
-    return vector<float>();
+    vector<vector<float>> T01 = {{cos(joint_data[0]), -sin(joint_data[0]), 0, 0},
+                                 {sin(joint_data[0]), cos(joint_data[0]),  0, 0},
+                                 {0,                  0,                   1, 0},
+                                 {0,                  0,                   0, 1}};
+
+    vector<vector<float>> T12 = {{cos(joint_data[1]), -sin(joint_data[1]), 0,  0},
+                                 {0,                  0,                   -1, -1.002},
+                                 {sin(joint_data[1]), cos(joint_data[1]),  0,  0},
+                                 {0,                  0,                   0,  1}};
+    vector<vector<float>> T23 = {{cos(joint_data[2]),  -sin(joint_data[2]), 0, 0},
+                                 {0,                   0,                   1, 0},
+                                 {-sin(joint_data[2]), -cos(joint_data[2]), 0, 0},
+                                 {0,                   0,                   0, 1}};
+    vector<vector<float>> T34 = {{cos(joint_data[3]), -sin(joint_data[3]), 0,  0},
+                                 {0,                  0,                   -1, -1.1155},
+                                 {sin(joint_data[3]), cos(joint_data[3]),  0,  0},
+                                 {0,                  0,                   0,  1}};
+    vector<vector<float>> T45 = {{cos(joint_data[4]), -sin(joint_data[4]), 0,  0},
+                                 {0,                  0,                   -1, 0},
+                                 {sin(joint_data[4]), cos(joint_data[4]),  0,  0},
+                                 {0,                  0,                   0,  1}};
+    vector<vector<float>> T56 = {{cos(joint_data[5]),  -sin(joint_data[5]), 0, 0},
+                                 {0,                   0,                   1, 0},
+                                 {-sin(joint_data[3]), -cos(joint_data[3]), 0, 0},
+                                 {0,                   0,                   0, 1}};
+    vector<vector<float>>res = matrix_multiple(T01,T12);
+    res = matrix_multiple(res,T23);
+    res = matrix_multiple(res,T34);
+    res = matrix_multiple(res,T45);
+    res = matrix_multiple(res,T56);
+    vector<float>position(6,0);
+    position[0] = res[0][3];
+    position[1] = res[1][3];
+    position[2] = res[2][3];
+    return position;
 }
 
 vector<float> MOTION::position2joint(vector<float> &position_data) {
@@ -39,9 +73,9 @@ vector<float> MOTION::position2joint(vector<float> &position_data) {
     res = MOTION::matrix_multiple(res, Rx_gama);
     MOTION::matrix_transform(R03);
     vector<vector<float>> R36 = MOTION::matrix_multiple(R03, res);
-    joint_data[4] = acos(-R36[1][2]);
-    joint_data[5] = asin(R36[1][1] / sin(joint_data[4]));
-    joint_data[3] = asin(-R36[2][2] / sin(joint_data[4]));
+    joint_data[4] = acos(fminf(fmaxf(-R36[1][2],-0.995),0.995));
+    joint_data[5] = asin(fminf(fmaxf(R36[1][1],-0.995),0.995) / sin(joint_data[4]));
+    joint_data[3] = asin(fminf(fmaxf(-R36[2][2],-0.995),0.995) / sin(joint_data[4]));
     return joint_data;
 }
 
