@@ -142,10 +142,12 @@ void Mysocket::mysocket_recv2(std::vector<DTS> &sdata) {
 void Mysocket::mysocket_send(ads &myads_local) {
     std::vector<DFS> gdata(Servo_number);
     std::vector<float> temp(Servo_number);
+    std::vector<float> position(Servo_number);
     std::vector<uint8_t *> senddata(gdata.size());
     while (iResult > 0) {
-        myads_local.get(gdata);
-        temp = dp::sreal_2j(gdata);
+        myads_local.get(gdata);// Servo Data has been collected!
+        temp = dp::sreal_2j(gdata); // temp equals joint data
+        position = MOTION::joint2position(temp);// C_position data
         for (int i = 0; i < gdata.size(); i++) {
             senddata[i] = (uint8_t *) &temp[i];
         }
