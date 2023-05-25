@@ -13,7 +13,6 @@ vector<float> MOTION::joint2position(vector<float> &joint_data) {
                                  {sin(joint_data[0]), cos(joint_data[0]),  0, 0},
                                  {0,                  0,                   1, 0},
                                  {0,                  0,                   0, 1}};
-
     vector<vector<float>> T12 = {{cos(joint_data[1]), -sin(joint_data[1]), 0,  0},
                                  {0,                  0,                   -1, -1.002},
                                  {sin(joint_data[1]), cos(joint_data[1]),  0,  0},
@@ -73,9 +72,9 @@ vector<float> MOTION::position2joint(vector<float> &position_data) {
     res = MOTION::matrix_multiple(res, Rx_gama);
     MOTION::matrix_transform(R03);
     vector<vector<float>> R36 = MOTION::matrix_multiple(R03, res);
-    joint_data[4] = acos(fminf(fmaxf(-R36[1][2],-0.995),0.995));
-    joint_data[5] = asin(fminf(fmaxf(R36[1][1],-0.995),0.995) / sin(joint_data[4]));
-    joint_data[3] = asin(fminf(fmaxf(-R36[2][2],-0.995),0.995) / sin(joint_data[4]));
+    joint_data[4] = acos(fminf(fmaxf(-R36[1][2],-0.9995),0.9995));
+    joint_data[5] = asin(fminf(fmaxf(R36[1][1],-0.9995),0.9995) / sin(joint_data[4]));
+    joint_data[3] = asin(fminf(fmaxf(-R36[2][2],-0.9995),0.9995) / sin(joint_data[4]));
     return joint_data;
 }
 
@@ -83,7 +82,7 @@ vector<vector<float>> MOTION::matrix_multiple(vector<vector<float>> &a, vector<v
 //check
     if (a[0].size() != b.size())
         return vector<vector<float>>(0);
-    int row = a.size(), col = b[0].size();
+    auto row = a.size(), col = b[0].size();
     vector<float> zer(col, 0);
     vector<vector<float>> res(row, zer);
     for (int i = 0; i < row; ++i) {

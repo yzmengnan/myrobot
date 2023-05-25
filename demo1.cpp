@@ -7,9 +7,9 @@
 
 // MYdemo headers
 #include "ADS.h"
+#include "MOTION.h"
 #include "Servo_DRIVE.h"
 #include "TimerCounter.h"
-#include "MOTION.h"
 
 // Gloabl varible
 std::atomic_int s_err(1);
@@ -61,16 +61,16 @@ auto main() -> int {
 }
 
 void test() {
-    std::vector<float> position = {1.402, -1.463, 0.2789, M_PI/2, 0.001, 0.001};
-    std::vector<float>res = MOTION::position2joint(position);
-    std::cout<<"Inverse Kinematic :"<<std::endl;
-    for(auto &child :res)
-        std::cout<<child<<",";
-    std::cout<<std::endl;
+    std::vector<float> position = {1.402, -1.463, 0.2789, M_PI / 2, 0.001, 0.001};
+    std::vector<float> res = MOTION::position2joint(position);
+    std::cout << "Inverse Kinematic :" << std::endl;
+    for (auto &child: res)
+        std::cout << child << ",";
+    std::cout << std::endl;
     //
-    std::vector<float>pos = MOTION::joint2position(res);
-    std::cout<<"Forward kinematics:"<<std::endl;
-    for(auto &child :pos)
-        std::cout<<child<<",";
-    std::cout<<std::endl;
+    std::vector<float> pos = MOTION::joint2position(res);
+    std::cout << "Forward kinematics:" << std::endl;
+    for (auto &child: pos)
+        std::cout << child << ",";
+    std::cout << std::endl;
 }
